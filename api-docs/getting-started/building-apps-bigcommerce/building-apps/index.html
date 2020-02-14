@@ -1,0 +1,1096 @@
+<!DOCTYPE html><html lang="en-US"><head><script async="" type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-TNGJT5N');</script><script async="" id="gtm-script" type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-KL3MKSK');</script><script defer="" async="" src="/_/assets/js/bugsnag.min.js"></script><script type="text/javascript">try {
+              var requestRunner = (function(){
+    
+  var requestRunnerWrapper = function () {
+      var elem = document.createElement("div");
+      elem.id="requestRunner";
+      elem.classList.add("requestRunner-close");
+      return elem;
+  }();
+  var requestRunnerTab =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTab";
+      elem.classList.add("requestRunner");
+      return elem;
+   }();
+  var requestRunnerTabHeader =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTabHeader";
+      elem.textContent = "Request Runner";
+      return elem;
+   }();
+  var requestRunnerTabClose =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTabClose";
+      elem.innerHTML = "&times;";
+      return elem;
+   }();
+  var requestRunnerFrameWrapper =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerFrameWrapper";
+      return elem;
+   }();
+  var requestRunnerLoader =  function () {
+    var elem = document.createElement("div");
+    elem.classList.add("requestRunnerLoader");
+    elem.classList.add("ui");
+    elem.classList.add("active");
+    elem.classList.add("indeterminate");
+    elem.classList.add("text");
+    elem.textContent = "Loading"
+    elem.classList.add("loader");
+    return elem;
+  }();
+  var requestRunnerFrame =  function () {
+      var elem = document.createElement("iframe");
+      elem.id = "requestRunnerframe";
+      elem.classList.add("requestRunner-close");
+      elem.onload = function() {
+        setTimeout(function(){requestRunnerFrame.classList.add("requestRunnerShow");}, 500);
+      }
+      elem.src = "";
+      return elem;
+   }();
+  var requestRunnerSearch = function () {
+    var elem = document.createElement("input");
+    elem.placeholder = "Search...";
+    elem.id = "algolia-search-frame";
+    elem.onload = function () {
+      docsearch({
+          appId: 'QUTLQTIH9V',
+          apiKey: 'd380da466100e42097fe7c280d5cc5e8',
+          indexName: 'stoplight_API_Endpoints',
+          inputSelector: '#algolia-search-frame',
+          debug: true,
+          algoliaOptions: {
+            hitsPerPage: 10,
+           facetFilters: [
+             'hierarchy.lvl6:-Host'
+           ]
+          }
+      });
+    }
+    return elem;
+};
+
+  var requestRunnerOpen = false;
+  var lastRequestSrc = "";
+  var newRequestSrc = "";
+
+  var newFrameLoading = function() {
+      return newRequestSrc != lastRequestSrc;
+  };
+
+  var pageReady = (callback) => {
+    if (document.readyState != "loading") callback();
+    else document.addEventListener("DOMContentLoaded", callback);
+  };
+   
+  var addToggleEvent = function () {
+     if (window.top != window.self) {return;}
+    document.querySelectorAll('a[href*="#requestrunner"]').forEach(e => { e.onclick = function(){
+      requestRunnerFrame.classList.remove("requestRunnerShow");
+      lastRequestSrc = requestRunnerFrame.src;
+      newRequestSrc = e.href;
+
+      setTimeout(function(){requestRunnerFrame.src = newRequestSrc;}, 300);
+      
+      toggleRequestRunner();
+      return false;
+    }});
+  };
+
+  var toggleRequestRunner = function () { 
+    
+      if (!requestRunnerOpen && newFrameLoading()) {
+        requestRunnerOpen = true;
+        requestRunnerWrapper.classList.remove("requestRunner-close");
+        requestRunnerFrame.classList.remove("requestRunner-close");
+        requestRunnerWrapper.classList.add("requestRunner-expand");
+        requestRunnerFrame.classList.add("requestRunner-expand");
+        return;
+      }
+      if (requestRunnerOpen && !newFrameLoading()) {
+        requestRunnerOpen = false;
+        requestRunnerWrapper.classList.add("requestRunner-close");
+        requestRunnerFrame.classList.add("requestRunner-close");
+        requestRunnerWrapper.classList.remove("requestRunner-expand");
+        requestRunnerFrame.classList.remove("requestRunner-expand");
+        return;
+      }
+      if (!requestRunnerOpen && !newFrameLoading()) {
+        requestRunnerOpen = true;
+        requestRunnerFrame.classList.add("requestRunnerShow");
+        requestRunnerWrapper.classList.remove("requestRunner-close");
+        requestRunnerFrame.classList.remove("requestRunner-close");
+        requestRunnerWrapper.classList.add("requestRunner-expand");
+        requestRunnerFrame.classList.add("requestRunner-expand");
+        return;
+      }
+      if (requestRunnerOpen && newFrameLoading()) {
+        requestRunnerOpen = true;
+        return;
+      }
+  };
+
+  var insertRequester = function () {
+    if (window.top != window.self) {return;}
+      requestRunnerTab.append(requestRunnerTabHeader);
+      requestRunnerTab.append(requestRunnerTabClose);
+      requestRunnerFrameWrapper.append(requestRunnerTab);
+      requestRunnerFrameWrapper.append(requestRunnerFrame);
+      requestRunnerFrameWrapper.append(requestRunnerLoader);
+      requestRunnerWrapper.append(requestRunnerFrameWrapper);
+      document.body.append(requestRunnerWrapper);
+  };
+  
+  var init = function () {
+    hideStuffInIframe();
+    if (window.top != window.self) {return;}
+    requestRunnerTab.onclick = function () {
+      requestRunnerOpen = false;
+      lastRequestSrc = requestRunnerFrame.src;
+      setTimeout(function(){requestRunnerFrame.classList.remove("requestRunnerShow");}, 200);
+      requestRunnerWrapper.classList.add("requestRunner-close");
+      requestRunnerFrame.classList.add("requestRunner-close");
+      requestRunnerWrapper.classList.remove("requestRunner-expand");
+      requestRunnerFrame.classList.remove("requestRunner-expand");
+    };
+    insertRequester();
+    addToggleEvent();
+  }
+
+  var hideStuffInIframe = function () {
+      if (inIframe()) {
+        document.body.classList.add("requestRunnerHub");
+      }
+    };
+
+  var inIframe = function () {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+  
+  return {
+    init: init,
+    pageReady: pageReady,
+    addToggleEvent: addToggleEvent
+  }
+
+})();
+
+var DevCenter = (function(){
+  var head = document.getElementsByTagName('head')[0];
+  var body = document.body;
+
+  var addScript = function (url, toElement) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      toElement.appendChild(script);
+  };
+
+  var addCss = function (url) {
+      var link = document.createElement("link");
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      link.href = url;
+      head.appendChild(link);
+  };
+
+  var jotFormScript = function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "https://form.jotform.com/static/feedback2.js"
+      script.text = 'new JotformFeedback({formId: "80163258305149",buttonText: "Docs Feedback",base: "https://form.jotform.com/",background: "#4E75F8",fontColor: "#FFFFFF",buttonSide: "bottom",buttonAlign: "right",type: 1,width: 530,height: 500,isCardForm: false});'
+      return script;
+  };
+
+  var changelogWidgetScript = function () {
+      var script = document.createElement('script');
+      script.async;
+      script.defer;
+      script.src = "https://cdn.noticeable.io/v1/noticeable-widget.js"
+      return script
+  };
+
+  var injectChangelogWidget = function () {
+      var target = document.getElementsByClassName('HubHeader-section')[0];
+      var noticeableWidget= document.createElement('noticeable-widget');
+      noticeableWidget.setAttribute('class', 'HubHeaderItem NoticeableWidget');
+      noticeableWidget.id = 'custom-eye-catching-animation';
+      noticeableWidget.setAttribute('access-token', 'I8jRV1nwLLaUUZBQZSep');
+      noticeableWidget.setAttribute('project-id', 'Q8YuGWPOCMmZDwnKUywV');
+      noticeableWidget.setAttribute('trigger-eye-catching','false');
+      noticeableWidget.setAttribute('segments','Noticeable:Timeline');
+      noticeableWidget.setAttribute('whiteLabel','true');
+      target.appendChild(noticeableWidget);
+  };
+
+  var init = function () {
+      window.onload = function() {
+          document.body.appendChild(jotFormScript());
+          document.body.appendChild(changelogWidgetScript());
+          injectChangelogWidget();
+        	
+
+          window.requestRunner.init();
+          // each time the route/url changes
+        	if (typeof(__reactStaticRouterHistory) !== "undefined") {
+            __reactStaticRouterHistory.listen(function(){
+              window.requestRunner.pageReady(requestRunner.addToggleEvent);
+            });
+          }
+      };
+  };
+
+return {
+  init: init
+};
+
+})();
+
+window.noticeableSettings = {
+  iframe: {
+    selector: "#noticeable-iframe",
+    singlePageApp: true,
+    timelineUrl: "https://timeline.noticeable.io/Q8YuGWPOCMmZDwnKUywV?header=false"
+	}
+};
+
+DevCenter.init();
+            } catch (error) {
+              console.log('Error running custom javascript', error);
+            }</script><script type="text/javascript">
+            window.__SL = {
+              config: {"ENV":"production","NODE_ENV":"production","RELEASE_STAGE":"production","DEFAULT_LOCALE":"en","APP_NAME":"hub-builder","GTM_KEY":"GTM-TNGJT5N","BUGSNAG_CLIENT":"68b2d22c41911b0c37104e17e26b753c","SL_API_HOST":"https://next-api.stoplight.io","SL_PRISM_HOST":"https://prism.stoplight.io","redirects":[{"from":"/api","to":"/api-docs"},{"from":"/api/v2","to":"/legacy/v2-products/v2-v3"},{"from":"/support","to":"/"},{"from":"/api/v3","to":"/api-docs"},{"from":"/themes/blueprint","to":"/legacy/blueprint-themes"},{"from":"/api/v3/storefront.html","to":"/api-docs/cart-and-checkout/cart-and-checkout-overview"},{"from":"/themes","to":"/stencil-docs"},{"from":"/api/guides","to":"/api-docs"},{"from":"/bigcommerce-for-wordpress/changelog/plugin-changelog","to":"https://plugins.trac.wordpress.org/browser/bigcommerce/trunk/CHANGELOG.md?order=name"},{"from":"/api-docs/catalog/products/product-images","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-videos","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-custom-fields","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-bulk-pricing","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-variant-options","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-complex-rules","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-metafields","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-reviews","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/brands","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/categories/categories-overview","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/categories/category-tree","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/price-lists/price-list-overview","to":"/api-docs/catalog/price-list-overview"},{"from":"/api-docs/shipping/shipping-overview","to":"/api-docs/store-management/shipping/shipping-overview"},{"from":"/api-docs/shipping/shipper-hq","to":"/api-docs/store-management/shipping/shipper-hq"},{"from":"/api-docs/scripts/scripts-overview","to":"/api-docs/storefront/scripts-overview"},{"from":"/api-reference/price-lists/pricelists-api","to":"/api-reference/price-lists/pricelists-api"},{"from":"/api-reference/store/store-information-api","to":"/api-reference/store-management/store-information-api"},{"from":"/api-reference/store/currency-api","to":"/api-reference/store-management/currency-api"},{"from":"/api-reference/store/geography-api","to":"/api-reference/store-management/geography-api"},{"from":"/api-reference/store/tax-classes-api","to":"/api-reference/store-management/tax-classes-api"},{"from":"/api-reference/shipping/shipping-api","to":"/api-reference/store-management/shipping-api"},{"from":"/api-reference/content/store-content-api","to":"/api-reference/marketing/store-content-api"},{"from":"/api-reference/content/content-scripts-api","to":"/api-reference/storefront/content-scripts-api"},{"from":"/api-reference/themes/themes-api","to":"/api-reference/storefront/themes-api"},{"from":"/api-docs/getting-started/basics/about-our-api","to":"/api-docs/getting-started/about-our-api"},{"from":"/api-docs/getting-started/basics/making-requests","to":"/api-docs/getting-started/making-requests"},{"from":"/api-docs/getting-started/basics/authentication","to":"/api-docs/getting-started/authentication"},{"from":"/api-docs/getting-started/basics/api-environment","to":"/api-docs/getting-started/about-our-api"},{"from":"/api-docs/getting-started/basics/filtering","to":"/api-docs/getting-started/filtering"},{"from":"/api-docs/getting-started/basics/best-practices","to":"/api-docs/getting-started/best-practices"},{"from":"/api-docs/getting-started/basics/api-status-codes","to":"/api-docs/getting-started/api-status-codes"},{"from":"/api-docs/orders/orders-api-guide","to":"/api-docs/orders/orders-api-overview"},{"from":"/stencil-docs/stencil-theme-editor","to":"/stencil-docs/store-design"},{"from":"/stencil-docs/stencil-theme-editor/stencil-theme-editor-overview","to":"/stencil-docs/store-design/store-design-overview"},{"from":"/stencil-docs/stencil-theme-editor/configuring-stencil-theme-editor","to":"/stencil-docs/store-design/configuring-store-design"},{"from":"/stencil-docs/stencil-theme-editor/config-json-metadata","to":"/stencil-docs/store-design/config-json-metadata"},{"from":"/stencil-docs/stencil-theme-editor/preparing-thumbnail-images","to":"/stencil-docs/store-design/preparing-thumbnail-images"},{"from":"/stencil-docs/stencil-theme-editor/theme-editor-troubleshooting","to":"/stencil-docs/store-design/store-design-troubleshooting"},{"from":"/stencil-docs/stencil-theme-editor/schema-json-metadata","to":"/stencil-docs/store-design/schema-json-metadata"},{"from":"/stencil-docs/getting-started/launching-stencil/authorizing-and-initializing","to":"/stencil-docs/getting-started/running-stencil-locally/authorizing-and-initializing"},{"from":"/stencil-docs/internationalization-and-localization/basis-for-internationalization","to":"/stencil-docs/internationalization-and-localization/defining-translation-keys"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/new-subpage","to":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/standard-string-helpers"},{"from":"/api-reference/content/store-content-api/redirects/getaredirecturl","to":"/api-reference/marketing/store-content-api/redirects/getalistofredirects"},{"from":"/stencil-docs/prepare-and-upload-a-theme/adding-recaptcha-v2","to":"/stencil-docs/prepare-and-upload-a-theme/bundling-and-uploading"},{"from":"/stencil-docs/custom-javascript-implementations/basic-non-npm-tutorial","to":"/stencil-docs/development-quickstart/customizing-javascript"},{"from":"/stencil-docs/getting-started/transitionining-to-stencil","to":"/stencil-docs/getting-started/transitioning-to-stencil"},{"from":"/stencil-docs/getting-started/installing-stencil","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/authentication-and-tokens","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally/troubleshooting-your-setup","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/getting-started/running-stencil-locally/stencil-cli-options-and-commands","to":"/markdown/stencil-docs/installing-stencil-cli/stencil-cli-options-and-commands.md"},{"from":"/stencil-docs/getting-started/running-stencil-locally/cornerstone-file-structure","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-the-cornerstone-theme","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-a-marketplace-theme","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/advanced-installation-options/theme-updates-and-version-control","to":"/\"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/development-quickstart/customizing-a-theme","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/config-json-resource-interactions","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/development-quickstart/customizing-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/rendering-html-with-ajax","to":"/stencil-docs/javascript-and-event-hooks/rendering-html-with-ajax"},{"from":"/stencil-docs/development-quickstart/testing-and-debugging-your-theme","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/development-quickstart/manage-theme-variations","to":"/stencil-docs/deploying-a-theme/naming-your-theme"},{"from":"/stencil-docs/store-design/store-design-overview","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/configuring-store-design","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/schema-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-ui-options"},{"from":"/stencil-docs/store-design/config-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/store-design/preparing-thumbnail-images","to":"/stencil-docs/deploying-a-theme/preparing-thumbnail-images"},{"from":"/stencil-docs/front-matter/front-matter-overview","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/front-matter/front-matter-attributes-reference","to":"/stencil-docs/reference-docs/front-matter-reference"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/layout-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/pages-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/google-analytics-enhanced-ecommerce","to":"/stencil-docs/developing-further/google-analytics-enhanced-ecommerce"},{"from":"/stencil-docs/template-files/templates-directory/google-amp","to":"/stencil-docs/developing-further/google-amp"},{"from":"/stencil-docs/template-files/templates-directory/using-disqus-with-stencil","to":"/stencil-docs/storefront-customization/using-disqus"},{"from":"/stencil-docs/template-files/custom-templates/about-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/authoring-testing-uploading-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/assigining-templates-to-pages","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/customizing-invoices","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/custom-templates/customizing-printable-packing-slips","to":"/stencil-docs/developing-further/customizing-printable-packing-slips"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/stored-credit-card-management","to":"/stencil-docs/developing-further/stored-credit-card-management"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/paypal-smart-buttons","to":"/stencil-docs/customizing-checkout/paypal-smart-buttons"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/optimized-one-page-checkout","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/currency-conversion","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/multi-language-checkout","to":"/stencil-docs/localization/multi-language-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-confirmation-injection","to":"/stencil-docs/customizing-checkout/checkout-confirmation-injection"},{"from":"/stencil-docs/css-and-design-assets/assets-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/layouts-and-utilities-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/getting-started-in-vanilla-js","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/implement-a-custom-checkout","to":"/stencil-docs/customizing-checkout/checkout-sdk-example"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/data-tags-event-hooks-reference","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/event-hook-overview-and-examples","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/remote-api-example","to":"/stencil-docs/javascript-and-event-hooks/remote-api-tutorial"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/stencil-utils-api-reference","to":"/stencil-docs/reference-docs/stencil-utils-api-reference"},{"from":"/stencil-docs/conditional-logic-examples","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/calling-theme-wide-variables","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/cart-price-relationships","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/catalog-price-object","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/dynamic-content-rendering","to":"/stencil-docs/javascript-and-event-hooks/dynamic-content-rendering"},{"from":"/stencil-docs/css-and-design-assets","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/assets-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/custom-sass-functions","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/page-composition-and-styling","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/using-and-updating-icons","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/using-custom-fonts","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/custom-javascript-implementations","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/adding-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/advanced-npm-tutorial","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/basic-npm-tutorial","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/new-subpage","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart","to":"/stencil-docs/getting-started"},{"from":"/stencil-docs/development-quickstart/config-json-resource-interactions","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/development-quickstart/customizing-a-theme","to":"/stencil-docs/getting-started/about-stencil"},{"from":"/stencil-docs/development-quickstart/customizing-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/manage-theme-variations","to":"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/development-quickstart/rendering-html-with-ajax","to":"/stencil-docs/javascript-and-event-hooks/rendering-html-with-ajax"},{"from":"/stencil-docs/development-quickstart/testing-and-debugging-your-theme","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/front-matter","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/front-matter/front-matter-attributes-reference","to":"/stencil-docs/reference-docs/front-matter-reference"},{"from":"/stencil-docs/front-matter/front-matter-overview","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/getting-started/advanced-installation-options","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/configuring-webpack-or-custom-build","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-a-marketplace-theme","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-the-cornerstone-theme","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/navigating-your-setup-scenario","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/theme-updates-and-version-control","to":"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/getting-started/authentication-and-tokens","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/installing-stencil","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally/authorizing-and-initializing","to":"/stencil-docs/installing-stencil-cli"},{"from":"/stencil-docs/getting-started/running-stencil-locally/cornerstone-file-structure","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/getting-started/running-stencil-locally/stencil-cli-options-and-commands","to":"/stencil-docs/installing-stencil-cli/stencil-cli-options-and-commands"},{"from":"/stencil-docs/getting-started/running-stencil-locally/troubleshooting-your-setup","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/getting-started/transitionining-to-stencil","to":"/stencil-docs/getting-started/transitioning-to-stencil"},{"from":"/stencil-docs/handlebars-syntax-and-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers/custom-array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers/standard-array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/collection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/collection-helpers/standard-collection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/comparison-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/comparison-helpers/standard-comparison-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/date-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/date-helpers/standard-date-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/handlebars-helpers-reference","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/html-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/html-helpers/standard-html-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/image-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/image-helpers/custom-image-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/inflection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/inflection-helpers/standard-inflection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/injection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/injection-helpers/injection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/markdown-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/markdown-helpers/standard-markdown-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/math-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/math-helpers/standard-math-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/misc-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/misc-helpers/standard-miscellaneous-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage/conditional-control-flow-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage/loop-control-flow-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/number-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/number-helpers/standard-number-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/object-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/object-helpers/standard-object-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/operator-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/operator-helpers/standard-operator-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/custom-string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/standard-string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/url-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/url-helpers/standard-url-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-overview","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/internationalization-and-localization","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/defining-translation-keys","to":"/stencil-docs/localization/translation-keys"},{"from":"/stencil-docs/internationalization-and-localization/features-supported","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/implementation-example","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/invoking-translation-keys","to":"/stencil-docs/localization/translation-keys"},{"from":"/stencil-docs/internationalization-and-localization/localizing-stores","to":"/stencil-docs/localization"},{"from":"/stencil-docs/prepare-and-upload-a-theme","to":"/stencil-docs/deploying-a-theme"},{"from":"/stencil-docs/prepare-and-upload-a-theme/bundling-and-uploading","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/prepare-and-upload-a-theme/checking-a-themes-size","to":"/stencil-docs/deploying-a-theme/checking-a-themes-size"},{"from":"/stencil-docs/prepare-and-upload-a-theme/shrinking-your-theme","to":"/stencil-docs/deploying-a-theme/checking-a-themes-size"},{"from":"/stencil-docs/prepare-and-upload-a-theme/staging-a-theme","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/prepare-and-upload-a-theme/troubleshooting-theme-uploads","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/stencil-object-model-reference","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/catalog-price","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/common-onjects-overview","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/common-product-card-model","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/price","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/price-range","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/stencil-image","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/banner","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/breadcrumbs","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/carousel","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/categories","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/currency-selector","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/faceted-search","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/featured-products","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/footer","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/global-objects-and-properties-overview","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/html-head","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/is-ajax","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/login","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/new-products","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/page-content","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/page-type-property","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/pages","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/pagination","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/search","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/settings","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/sitemap","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/social-links","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/template-property","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/top-sellers","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/blog-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/brand-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/cart-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/category-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/customer-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/forms-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/other-objects-and-properties-overview","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/product-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/store-design","to":"/stencil-docs/configure-store-design-ui"},{"from":"/stencil-docs/store-design/config-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/store-design/configuring-store-design","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/preparing-thumbnail-images","to":"/stencil-docs/deploying-a-theme/preparing-thumbnail-images"},{"from":"/stencil-docs/store-design/schema-json-metadata","to":"/api-reference/theme-objects/models/configjson"},{"from":"/stencil-docs/store-design/store-design-overview","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/template-files","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/about-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/assigining-templates-to-pages","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/customizing-invoices","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/custom-templates/customizing-printable-packing-slips","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/customize-stencil-checkout","to":"/stencil-docs/customizing-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-confirmation-injection","to":"/stencil-docs/customizing-checkout/checkout-confirmation-injection"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/getting-started-in-vanilla-js","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/implement-a-custom-checkout","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/currency-conversion","to":"/stencil-docs/localization"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/multi-language-checkout","to":"/stencil-docs/localization/multi-language-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/optimized-one-page-checkout","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/paypal-smart-buttons","to":"/stencil-docs/customizing-checkout/paypal-smart-buttons"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/restyling-the-apple-pay-button","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/stored-credit-card-management","to":"/stencil-docs/developing-further/stored-credit-card-management"},{"from":"/stencil-docs/template-files/templates-directory","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/templates-directory/components-subdirectory","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/templates-directory/google-amp","to":"/stencil-docs/developing-further/google-amp"},{"from":"/stencil-docs/template-files/templates-directory/google-analytics-enhanced-ecommerce","to":"/stencil-docs/developing-further/google-analytics-enhanced-ecommerce"},{"from":"/stencil-docs/template-files/templates-directory/layout-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/pages-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/using-disqus-with-stencil","to":"/stencil-docs/storefront-customization/using-disqus"},{"from":"/api-reference/theme-objects/models/configjson","to":"/stencil-docs/reference-docs/theme-objects/models/configjson"},{"from":"/voyager","to":"/api-docs/storefront/graphql/explorer"},{"from":"/api-docs/storefront/graphql/explorer","to":"/graphql-explorer"},{"from":"/api-docs/storefront/graphql/playground","to":"/graphql-playground"},{"from":"/graphql","to":"/graphql-playground"},{"from":"/api#api-status-codes","to":"/api-docs/getting-started/api-status-codes"},{"from":"/api-docs/catalog/products/products-overview","to":"/api-docs/catalog/products-overview"}],"variables":"{\n  \"docs_path\": \"bigcommerce/dev-docs/master/docs\",\n  \"reference_path\": \"bigcommerce/dev-docs/master/reference\",\n  \"storefront_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJlYXQiOjE3NjcxMzkyMDAsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxLCJjb3JzIjpbImh0dHBzOi8vZGV2ZWxvcGVyLmJpZ2NvbW1lcmNlLmNvbSJdLCJjaWQiOjEsImlhdCI6MTU3NjI1MzgyNCwic3ViIjoiM3dtZThrcWtrNjQwNzZueWljMGkzamk0NG5wajQ2byIsInNpZCI6OTk5MzMxNzg0LCJpc3MiOiJCQyJ9.Rqt6hNI2W-XSOzHl4pqtfhAOygwka6atCIaIZ_WAa9v3dOctnBlZpBV5wzd3ICCy4sTCOZ9mJwcFH5_CHmJpNQ\",\n  \"playground_tab\": \"all\",\n  \"experiments\": \"off\",\n  \"store_hash\": \"store_hash\"\n}"}
+            };
+
+            false
+            </script><script async="" id="google-analytics-script" type="text/javascript">
+      var script = document.createElement('script');
+      script.src = 'https://www.google-analytics.com/analytics.js';
+      document.head.appendChild(script);
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    </script><script async="" id="segment-script" type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("BTmUWLubCbJjBopJwsDTxC0594E6Z5ex");
+  analytics.page();
+  }}();
+  </script><script async="" src="/_/assets/search/1.3.54551.js"></script><link rel="preload" as="script" href="/_/assets/templates/vendors~client-containers-Login~client-containers-Page.58d3df14.js"/><link rel="preload" as="script" href="/_/assets/templates/vendors~client-containers-Page.ef375bcd.js"/><link rel="preload" as="script" href="/_/assets/templates/client-containers-Login~client-containers-Page.70fcdb42.js"/><link rel="preload" as="script" href="/_/assets/templates/client-containers-Page.674feb58.js"/><link rel="preload" as="script" href="/_/assets/templates/styles.b34d5813.js"/><link rel="preload" as="script" href="/_/assets/templates/vendors~main.246fd5b0.js"/><link rel="preload" as="script" href="/_/assets/main.f4e34ab0.js"/><link rel="stylesheet" href="/_/assets/css/semantic.min.css"/><link rel="preload" as="style" href="/_/assets/main.48aefef2.css"/><link rel="stylesheet" href="/_/assets/main.48aefef2.css"/><link rel="preload" as="style" href="/_/assets/styles.b34d5813.css"/><link rel="stylesheet" href="/_/assets/styles.b34d5813.css"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="index, follow"/><title>Building an App - Building Apps With BigCommerce - Getting Started - API Docs</title><meta name="application-name" content="Dev Center" id="application-name"/><meta property="og:site_name" content="Dev Center" id="og:site_name"/><meta property="og:title" content="Building an App - Building Apps With BigCommerce - Getting Started - API Docs" id="og:title" data-react-helmet="true"/><meta property="og:type" content="website" id="og:type"/><meta name="description" content="Building an App
+
+
+
+On This Page
+
+OAuth Summary
+
+Request Headers
+
+Managing Users Session Timeouts
+
+Installation and Update Sequence
+
+Receiving the GET Re..." id="description" data-react-helmet="true"/><meta property="og:description" content="Building an App
+
+
+
+On This Page
+
+OAuth Summary
+
+Request Headers
+
+Managing Users Session Timeouts
+
+Installation and Update Sequence
+
+Receiving the GET Re..." id="og:description" data-react-helmet="true"/><link rel="shortcut icon" href="https://www.bigcommerce.com/assets/images/favicons/favicon-96x96.png"/><link rel="preload" href="/_/assets/fonts/icons.woff2?v=5.0.6" as="font" type="font/woff2" crossorigin="anonymous"/><link href="/_/assets/css/semantic.min.css" rel="preload" as="style"/><link href="/_/assets/css/custom-theme.54551.css" rel="preload" as="style"/><link href="/_/assets/css/custom-file.54551.css" rel="preload" as="style"/></head><body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KL3MKSK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TNGJT5N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><link rel="stylesheet" href="/_/assets/css/custom-theme.54551.css"/><link rel="stylesheet" href="/_/assets/css/custom-file.54551.css"/><style type="text/css">
+            @font-face {
+              font-family: 'Icons';
+              src: url('/_/assets/fonts/icons.woff2?v=5.0.6') format('woff2'), url('/_/assets/fonts/icons.woff?v=5.0.6') format('woff');
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-decoration: inherit;
+              text-transform: none;
+            }
+            </style><div id="root"><div class="Hub flex flex-col h-full"><div class="HubHeader print:hidden bg-white is-dark"><div class="HubHeader-inner relative hidden sm:flex items-center h-16 p-0"><div class="HubHeaderMobile-sidebar-toggle h-16 w-16 flex items-center justify-center text-2xl is-dark text-white"><svg aria-hidden="true" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></div><div class="FormDropdown HubHeaderMobile-title flex-grow text-center font-bold text-xl text-white"><div role="listbox" aria-expanded="false" class="ui floating dropdown FormDropdown-inner" tabindex="0"><div class="text" role="alert" aria-live="polite">API Docs</div><i aria-hidden="true" class="dropdown icon"></i><div class="menu transition"><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold with-image is-light hover:text-primary text-black cursor-pointer active" aria-current="true" href="/"><div class="HubHeaderItem-image flex items-center"><img src="https://cdn6.bigcommerce.com/s-qtmbtj/product_images/uploaded_images/bigcommerce-logomark-darkbg.png" alt="Dev Center"/> <div class="ml-4">Dev Center</div></div></a></div><div style="pointer-events:all" role="option" aria-checked="true" aria-selected="true" class="active selected item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer active" aria-current="true" href="/api-docs"><div class="HubHeaderItem-name">API Docs</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" aria-current="false" href="/api-reference"><div class="HubHeaderItem-name">API Reference</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" aria-current="false" href="/stencil-docs"><div class="HubHeaderItem-name">Theme Docs</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" aria-current="false" href="/tools-resources"><div class="HubHeaderItem-name">Tools</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" href="https://medium.com/bigcommerce-developer-blog" target="_blank"><div class="HubHeaderItem-name">Blog</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" aria-current="false" href="/changelog"><div class="HubHeaderItem-name">Changelog</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" href="https://devtools.bigcommerce.com" target="_blank"><div class="HubHeaderItem-name">My Apps</div></a></div><div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item"><a class="text HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-light hover:text-primary text-black cursor-pointer" href="https://login.bigcommerce.com/signup" target="_blank"><div class="HubHeaderItem-name">Create Account</div></a></div></div></div></div><div class="HubHeaderMobile-sidebar-toggle h-16 w-16 flex items-center justify-center text-lg is-dark text-white"><svg aria-hidden="true" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div></div><div class="HubHeader-inner sm:hidden flex items-center h-24"><div class="HubHeader-section flex items-center flex-grow is-left"><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold with-image is-dark text-white cursor-pointer active" aria-current="true" href="/"><div class="HubHeaderItem-image flex items-center"><img src="https://cdn6.bigcommerce.com/s-qtmbtj/product_images/uploaded_images/bigcommerce-logomark-darkbg.png" alt="Dev Center"/> <div class="ml-4">Dev Center</div></div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-active is-dark text-white bg-lighten-100 cursor-pointer active" aria-current="true" href="/api-docs"><div class="HubHeaderItem-name">API Docs</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" aria-current="false" href="/api-reference"><div class="HubHeaderItem-name">API Reference</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" aria-current="false" href="/stencil-docs"><div class="HubHeaderItem-name">Theme Docs</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" aria-current="false" href="/tools-resources"><div class="HubHeaderItem-name">Tools</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" href="https://medium.com/bigcommerce-developer-blog" target="_blank"><div class="HubHeaderItem-name">Blog</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" aria-current="false" href="/changelog"><div class="HubHeaderItem-name">Changelog</div></a></div><div class="HubHeader-section flex items-center justify-end is-right flex-grow relative"><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" href="https://devtools.bigcommerce.com" target="_blank"><div class="HubHeaderItem-name">My Apps</div></a><a class="HubHeaderItem flex items-center text-lg mx-1 px-4 py-2 rounded font-bold without-image is-dark text-white cursor-pointer" href="https://login.bigcommerce.com/signup" target="_blank"><div class="HubHeaderItem-name">Create Account</div></a><div class="HubHeader-search h-24 flex items-center"><div class="FormSearch HubSearch"><div class="ui category fluid search"><div class="ui icon input fluid"><input type="text" placeholder="Search..." value="" tabindex="0" class="prompt" autoComplete="off"/><i aria-hidden="true" class="search icon"></i></div><div class="results transition"><div class="message empty"><div class="header">No results found.</div></div></div></div></div></div></div></div></div><div class="HubMain flex flex-1 relative has-sidebar"><div role="presentation" class="HubSidebar-overlay pin fixed sm:block hidden isMobile-closed"></div><div class="HubSidebar-wrapper print:hidden flex flex-col items-end bg-grey-lightest border-r border-grey-light isMobile-closed"><div class="HubSidebar flex-1" style="max-height:auto"><div class="HubSidebar-inner flex flex-col"><div id="tree-list" class="TreeList TreeList--viewer"><div class="TreeList-items depth--0"><div class="TreeList-folder depth--0 child-active no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Getting Started</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/making-requests"><div class="flex" title="Quick Start"><div class="SortableTree-itemName flex-1">Quick Start</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/about-our-api"><div class="flex" title="About Our API"><div class="SortableTree-itemName flex-1">About Our API</div></div></a><div class="TreeList-folder depth--0"><div><a class="TreeList-folderInner hover:text-active has-content has-children cursor-pointer" aria-current="false" href="/api-docs/getting-started/authentication"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Authentication</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></a></div></div><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/filtering"><div class="flex" title="Filtering"><div class="SortableTree-itemName flex-1">Filtering</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/best-practices"><div class="flex" title="Best Practices"><div class="SortableTree-itemName flex-1">Best Practices</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/api-status-codes"><div class="flex" title="API Status Codes"><div class="SortableTree-itemName flex-1">API Status Codes</div></div></a><div class="TreeList-folder depth--0 child-active"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Building Apps With BigCommerce</div><div class="TreeList-folderToggler  text-right"><i aria-hidden="true" class="icon chevron down open"></i></div></div></div></div><div class="TreeList-items depth--1"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/getting-started/building-apps-bigcommerce/types-of-apps"><div class="flex" title="Types of Apps"><div class="SortableTree-itemName flex-1">Types of Apps</div></div></a><a class="TreeList-item hover:text-active text-active is-active cursor-pointer active" aria-current="true" href="/api-docs/getting-started/building-apps-bigcommerce/building-apps"><div class="flex" title="Building an App"><div class="SortableTree-itemName flex-1">Building an App</div></div></a></div></div><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Webhooks</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Partner Information</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/partner/becoming-a-partner"><div class="flex" title="Becoming A Partner"><div class="SortableTree-itemName flex-1">Becoming A Partner</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/partner/app-store-approval-requirements"><div class="flex" title="App Store Approval Requirements"><div class="SortableTree-itemName flex-1">App Store Approval Requirements</div></div></a></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Catalog</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/catalog/products-overview"><div class="flex" title="Overview"><div class="SortableTree-itemName flex-1">Overview</div></div></a><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Currencies</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/catalog/pricing-order-operation"><div class="flex" title="Pricing Order"><div class="SortableTree-itemName flex-1">Pricing Order</div><div class="TreeList-itemToken  flex items-center justify-center"><div style="color:#55bf40" class="SortableTree-itemToken-inner token--reference flex items-center">reference</div></div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/catalog/price-list-overview"><div class="flex" title="Price Lists"><div class="SortableTree-itemName flex-1">Price Lists</div></div></a></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Store Management</div></div></div></div><div class="TreeList-items depth--0"><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Shipping</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Customers &amp; Subscribers</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/customers/customers-subscribers-overview"><div class="flex" title="Overview "><div class="SortableTree-itemName flex-1">Overview </div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/customers/customer-login-api"><div class="flex" title="Customer Login API"><div class="SortableTree-itemName flex-1">Customer Login API</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/customers/current-customer-api"><div class="flex" title="Current Customer API"><div class="SortableTree-itemName flex-1">Current Customer API</div></div></a></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Storefront</div></div></div></div><div class="TreeList-items depth--0"><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">GraphQL</div><div class="TreeList-itemToken" style="color:#bf4093">new</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/storefront/scripts-overview"><div class="flex" title="Scripts"><div class="SortableTree-itemName flex-1">Scripts</div></div></a><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Widgets</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Cart and Checkout</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/cart-and-checkout/cart-and-checkout-overview"><div class="flex" title="Overview"><div class="SortableTree-itemName flex-1">Overview</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/cart-and-checkout/working-sf-apis"><div class="flex" title="Working with Storefront APIs"><div class="SortableTree-itemName flex-1">Working with Storefront APIs</div><div class="TreeList-itemToken  flex items-center justify-center"><div style="color:#93ac53" class="SortableTree-itemToken-inner token--tutorial flex items-center">tutorial</div></div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/cart-and-checkout/checkout-sdk"><div class="flex" title="Checkout SDK"><div class="SortableTree-itemName flex-1">Checkout SDK</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/cart-and-checkout/add-to-cart-url"><div class="flex" title="Add to Cart URLs"><div class="SortableTree-itemName flex-1">Add to Cart URLs</div></div></a><div class="TreeList-folder depth--0"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold select-none">Embedded Checkout</div><div class="TreeList-folderToggler  opacity-35 text-right"><i aria-hidden="true" class="icon chevron right"></i></div></div></div></div></div></div></div><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/developers-guide-headless"><div class="flex" title="Headless Commerce"><div class="SortableTree-itemName flex-1">Headless Commerce</div><div class="TreeList-itemToken  flex items-center justify-center"><div style="color:#6c40bf" class="SortableTree-itemToken-inner token--GUIDE flex items-center">GUIDE</div></div></div></a><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Payments</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/payments/payments-api-overview"><div class="flex" title="Payments API"><div class="SortableTree-itemName flex-1">Payments API</div></div></a></div></div><div class="TreeList-folder depth--0 no-toggle"><div><div class="TreeList-folderInner hover:text-active has-children"><div class="flex items-center"><div class="TreeList-folderName flex-1 truncate font-bold mb-3 lg:mb-2 text-grey-dark uppercase tracking-wide text-sm lg:text-xs">Orders</div></div></div></div><div class="TreeList-items depth--0"><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/orders/orders-overview"><div class="flex" title="Overview"><div class="SortableTree-itemName flex-1">Overview</div></div></a><a class="TreeList-item hover:text-active cursor-pointer" aria-current="false" href="/api-docs/orders/orders-api-overview"><div class="flex" title="Orders API"><div class="SortableTree-itemName flex-1">Orders API</div></div></a></div></div></div></div></div></div></div><div class="HubPage-wrapper flex-1 bg-white w-full overflow-y-scroll min-h-100"><div class="HubPage"><div class="HubPage-inner flex"><div class="HubPage-content flex-1 relative"><div class="HubPageBody"><div class="HubBlockList"><div class="HubBlock HubBlock--text flex is-viewing is-solo is-last is-padded"><div class="HubBlock-inner flex-1 w-full"><div class="HubBlock-content"><div class="MarkdownViewer markdown-body"><div class="HtmlViewer"><h1>Building an App</h1>
+<div class="otp" id="no-index">
+<h3>On This Page</h3>
+<ul>
+<li><a href="#oauth-summary">OAuth Summary</a></li>
+<li><a href="#request-headers">Request Headers</a></li>
+<li><a href="#managing-users-session-timeouts">Managing Users Session Timeouts</a></li>
+<li><a href="#installation-and-update-sequence">Installation and Update Sequence</a></li>
+<li><a href="#receiving-the-get-request">Receiving the GET Request</a></li>
+<li><a href="#responding-to-the-get-request">Responding to the GET Request</a></li>
+<li><a href="#making-the-post-request">Making the POST Request</a></li>
+<li><a href="#receiving-the-post-response">Receiving the POST Response</a></li>
+<li><a href="#required-uris">Required URIs</a></li>
+<li><a href="#processing-the-signed-payload">Processing the Signed Payload</a></li>
+<li><a href="#multi-user-support">Multi-User Support</a></li>
+<li><a href="#external-app-installation">External App Installation</a></li>
+<li><a href="#designing-the-user-interface">Designing the User Interface</a></li>
+<li><a href="#hosting-your-app">Hosting Your App</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+<h2>OAuth Summary</h2>
+<p>API token creation is a permission reserved for the <a href="https://forum.bigcommerce.com/s/article/Store-API-Accounts#creating" target="_blank">store owner</a> user account. An app can request authentication “on behalf” of a store owner, allowing the app to make API requests against store data.</p>
+<p>To test an app before release, apply for a <a href="https://www.bigcommerce.com/partners/" target="_blank">sandbox</a> store.</p>
+<ul>
+<li>When a merchant clicks your app’s Install button in the control panel, a <a href="#receiving-the-get-request">/GET request</a> is sent to your app’s <a href="#receiving-the-get-request">Auth callback URL</a>.</li>
+<li>The /GET request sent from BigCommerce contains a <code>code</code> or temporary access token, <code>client_id</code>, <code>client_secret</code>, <code>scopes</code> and <a href="#receiving-the-get-request">other information</a>. Your Auth Callback URL needs to be served over https. You should also have access to your app’s server logs which will allow you to see the information in the request.</li>
+<li>Your app needs to <a href="#responding-to-the-get-request">respond</a> to the /GET  with HTML that will be rendered in an iframe in the store’s control panel.</li>
+<li>Your app then needs to make a /POST request back to BigCommerce that contains the code, client_id and client secret. This should be done programmatically.</li>
+<li>BigCommerce will respond with a permanent Oauth token authorized against the store that has installed your app.</li>
+<li>After installation, the <code>store_hash</code> and <code>access_token</code> should be stored somewhere secure so the app does not lose its authorization.</li>
+</ul>
+<h2>Request Headers</h2>
+<p>API requests are authenticated by the following HTTP headers:</p>
+<ul>
+<li><code>X-Auth-Client</code> – The Client ID of the requesting app.</li>
+<li><code>X-Auth-Token</code> – Access token authorizing an app to access store data on behalf of a user.</li>
+</ul>
+<p>In addition, while not all resources require the Accept and Content-Type headers, many do. To ensure that your calls succeed, always include these headers. For more details on request headers and their accepted values, see <a href="https://developer.bigcommerce.com/api-docs/getting-started/about-our-api#request-headers" target="_blank">Request Headers</a>.</p>
+<h2>Managing Users Session Timeouts</h2>
+<p>We recommend that you add BigCommerce’s JavaScript SDK to your Single-Click Apps to protect your apps’ users from getting logged out of the BigCommerce control panel after a period of idleness. To include our SDK, add this script tag to your Single-Click App:
+<code>&lt;script src=&quot;//cdn.bigcommerce.com/jssdk/bc-sdk.js&quot;&gt;</code></p>
+<p>Optionally, you can pass a logout callback function within the initialization call:</p>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">Logout Callback</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "Logout Callback"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-javascript">Bigcommerce<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      onLogout<span class="token punctuation">:</span> callback
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This callback function will run when the user explicitly logs out of the BigCommerce control panel or is automatically logged out. The callback will allow your app to respond to this logout appropriately.</p>
+<h2>Installation and Update Sequence</h2>
+<p>The purpose of the App Installation sequence is to obtain an Oauth token for the store installing the app, using the Client ID and Secret from Dev Tools.</p>
+<p>A user kicks off the installation or update sequence from within a store’s control panel by clicking the “Install” button from your app details page or by clicking an installed app to update its scopes. BigCommerce redirects the user to the Auth Callback URI provided during app registration. The Auth Callback URI must be publicly available, fully qualified, and served over TLS.</p>
+<!--
+    title: #### App Installation Sequence
+
+    data: //s3.amazonaws.com/user-content.stoplight.io/6012/1536263813949
+-->
+<h4>App Installation Sequence</h4>
+<p><img src="//s3.amazonaws.com/user-content.stoplight.io/6012/1536263813949" alt="#### App Installation Sequence" title="#### App Installation Sequence
+"></p>
+<h3>Handling Requests Securely</h3>
+<p>The request comes from the client browser, rather than directly from BigCommerce. This allows you to use a non-publicly-available Auth Callback URI while testing your app.</p>
+<p>For security, Auth and Load callbacks should be handled server-side. If you are building a client-side application (such as an AngularJS Single Page App), you should handle Auth and Load callbacks outside that application. Use a separate service that accepts the Auth and Load callback requests, generates tokens, validates requests, and then redirects the user to your client-side app’s entry point.</p>
+<h2>Receiving the GET Request</h2>
+<p>The GET request to your Auth Callback URI contains a temporary code that you can exchange for a permanent OAuth token. It also includes a unique value that identifies the store installing or updating your app, as well as authorized scopes.</p>
+<p>The following table details the full list of parameters and values included in the GET request from BigCommerce to your Auth Callback URI. BigCommerce passes these within the URI itself as query parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Temporary code to exchange for a permanent OAuth token. See <a href="#building-apps_making-post-request">Making the POST request</a> below for more information about this exchange.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>List of scopes authorized by the user. As a best practice, your app should validate this list to ensure that it matches the app's needs, and fail if it does not. However, at this time, the user does not have any opportunity to pick and choose between scopes. The dialog presented to the user requires the user to approve all scopes or none.</td>
+</tr>
+<tr>
+<td>context</td>
+<td>The store hash: a unique value that identifies the store on which a logged-in user has clicked to install or your app. BigCommerce passes this along with a context path as follows: <code>stores/{store_hash}</code>. Save the store hash value, because you will need to pass it in all your requests to the API.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example – Initial Installation</strong></p>
+<p>This example initiates the token exchange, with a requested scope of store_v2_orders:</p>
+<!--
+title: "Initial Installation"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-http"><span class="token request-line"><span class="token property">GET</span> /auth?code=qr6h3thvbvag2ffq&amp;scope=store_v2_orders&amp;context=stores/g5cd38 HTTP/1.1</span>  
+<span class="token header-name keyword">Host:</span> app.example.com
+</code></pre>
+<h3>Example – Updating Scopes</h3>
+<p>The following example requests a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:</p>
+<!--
+title: "Updating Scopes"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-http"><span class="token request-line"><span class="token property">GET</span> /auth?code=qr6h3thvbvag2ffq&amp;scope=store_v2_orders+store_v2_products&amp;context=stores/g5cd38 HTTP/1.1</span>  
+<span class="token header-name keyword">Host:</span> app.example.com
+</code></pre>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--info">
+<div class="HubBlock-content">
+<!-- theme:  -->
+<h3>Token Invalidation</h3>
+<blockquote>
+<p>When your app receives a new token, any previously issued token is invalidated.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<h2>Responding to the GET Request</h2>
+<p>Upon receiving the GET request at your Auth Callback URI, your app should return some HTML to the merchant browser. BigCommerce renders this in an iframe inside of the control panel. It could be a form that collects further information from the user, or you could redirect the user to your app’s main page. If you do not pass back some HTML, the user will be left looking at a blank screen. Such an app would not be accepted into the App Marketplace.</p>
+<h2>Making the POST Request</h2>
+<p>The POST request’s primary purpose is to exchange the temporary access code for a permanent OAuth token. However, your app must pass a number of additional values to accomplish the exchange. Pass the parameters and their values inside the request body, using query parameters and URL-encoding. To achieve this, you must include one of the following HTTP headers:</p>
+<p><code>Content-Type: application/x-www-form-urlencoded</code> or <code>Content-Type: application/json</code></p>
+<p>Make the POST request to the following address: <code>https://login.bigcommerce.com/oauth2/token</code></p>
+<h3>Initial Installation</h3>
+<p>Upon receiving the POST request during inital installation, BigCommerce marks the status of your app as “Installed”, removes the progress-indicator overlay, and places your app icon in the control panel’s left-hand navigation. With the progress-indicator overlay removed, the user can interact with the HTML that you returned in your GET response.</p>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--info">
+<div class="HubBlock-content">
+<!-- theme:  -->
+<h3>Receiving the POST request</h3>
+<blockquote>
+<p>Upon receiving the POST request during initial installation BigCommerce removes the update prompt from the control panel.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<h3>Parameters</h3>
+<p>Include values for each of the following parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>client_id</td>
+<td>The Client ID for your app, obtained during <a href="https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_client-id-secret" target="_blank">registration</a>.</td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>The Client Secret for your app, obtained during <a href="https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_client-id-secret" target="_blank">registration</a>.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Temporary access code received in the <a href="/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request">GET request</a> discussed above.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>List of OAuth scopes received in the <a href="/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request">GET request</a> discussed above.</td>
+</tr>
+<tr>
+<td>grant_type</td>
+<td>Always use the following: authorization_code.</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>Must be identical to your registered Auth Callback URI.</td>
+</tr>
+<tr>
+<td>context</td>
+<td>The store hash received in the <a href="/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request">GET request</a>, in the format: <code>stores/{_store_hash_}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples – Initial Installation</strong></p>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">HTTP</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "HTTP"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-http"><span class="token request-line"><span class="token property">POST</span> /oauth2/token HTTP/1.1</span>
+<span class="token header-name keyword">Host:</span> login.bigcommerce.com
+<span class="token header-name keyword">Content-Type:</span> application/x-www-form-urlencoded
+<span class="token header-name keyword">Content-Length:</span> 186
+client_id={CLIENT_ID}&amp;client_secret={CLIENT_SECRET}&amp;code=qr6h3thvbvag2ffq&amp;scope=store_v2_orders&amp;grant_type=authorization_code&amp;redirect_uri=https://app.example.com/oauth&amp;context=stores/{STORE_HASH}
+</code></pre>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">PHP</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "PHP"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-php"><span class="token keyword">use</span> <span class="token package">Bigcommerce<span class="token punctuation">\</span>Api<span class="token punctuation">\</span>Connection</span><span class="token punctuation">;</span>
+<span class="token variable">$tokenUrl</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"https://login.bigcommerce.com/oauth2/token"</span><span class="token punctuation">;</span>
+<span class="token variable">$connection</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Connection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$connection</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">useUrlencoded</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$response</span> <span class="token operator">=</span> <span class="token variable">$connection</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">post</span><span class="token punctuation">(</span><span class="token variable">$tokenUrl</span><span class="token punctuation">,</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+    <span class="token double-quoted-string string">"client_id"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"CLIENT_ID"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"client_secret"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"CLIENT_SECRET"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"redirect_uri"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"https://app.example.com/oauth"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"grant_type"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"authorization_code"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"code"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"code"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"scope"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"scope"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"context"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"context"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$token</span> <span class="token operator">=</span> <span class="token variable">$response</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">access_token</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Examples – Updating Scopes</strong></p>
+<p>The following examples request a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:</p>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">HTTP</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "HTTP"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-http"><span class="token request-line"><span class="token property">POST</span> /oauth2/token HTTP/1.1</span>
+<span class="token header-name keyword">Host:</span> login.bigcommerce.com
+<span class="token header-name keyword">Content-Type:</span> application/x-www-form-urlencoded
+<span class="token header-name keyword">Content-Length:</span> 186
+client_id={CLIENT_ID}&amp;client_secret={CLIENT_SECRET}&amp;scope=store_v2_orders+store_v2_products&amp;grant_type=authorization_code&amp;redirect_uri=https://app.example.com/oauth&amp;context=stores/{STORE_HASH}
+</code></pre>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">PHP</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "PHP"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-php"><span class="token keyword">use</span> <span class="token package">Bigcommerce<span class="token punctuation">\</span>Api<span class="token punctuation">\</span>Connection</span><span class="token punctuation">;</span>
+<span class="token variable">$tokenUrl</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"https://login.bigcommerce.com/oauth2/token"</span><span class="token punctuation">;</span>
+<span class="token variable">$connection</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Connection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$connection</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">useUrlencoded</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$response</span> <span class="token operator">=</span> <span class="token variable">$connection</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">post</span><span class="token punctuation">(</span><span class="token variable">$tokenUrl</span><span class="token punctuation">,</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+    <span class="token double-quoted-string string">"client_id"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"CLIENT_ID"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"client_secret"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"CLIENT_SECRET"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"redirect_uri"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"https://app.example.com/oauth"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"grant_type"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token double-quoted-string string">"authorization_code"</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"code"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"code"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"scope"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"scope"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token double-quoted-string string">"context"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"context"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$token</span> <span class="token operator">=</span> <span class="token variable">$response</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">access_token</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>Receiving the POST Response</h2>
+<p>The POST response will include a JSON object containing the permanent OAuth token, user information, and other values. Upon receiving the permanent OAuth token, store it securely. You should also store the user and store hash values, to identify the user and store at load and uninstall. The following sections detail the contents of the JSON body.</p>
+<h3>JSON Values</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Value Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>The permanent OAuth token that your app can use to make requests to the Stores API on behalf of the user. Store this value securely.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>string</td>
+<td>List of authorization scopes.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Unique identifier for the user. Store this value to identify the user at load and uninstall.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>The user’s email address. Store this value to identify the user at load and uninstall.</td>
+</tr>
+<tr>
+<td>context</td>
+<td>string</td>
+<td>The store hash, as well as a base path: <code>stores/{_store_hash_}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">Initial Installation</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "Initial Installation"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"ACCESS_TOKEN"</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"store_v2_orders"</span><span class="token punctuation">,</span>
+  <span class="token property">"user"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">24654</span><span class="token punctuation">,</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"merchant@mybigcommerce.com"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"context"</span><span class="token operator">:</span> <span class="token string">"stores/STORE_HASH"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Update requests will refresh the payload’s access_token and scope values. Here again, the following example requests a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:</p>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">Updating Scopes</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "Updating Scopes"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"ACCESS_TOKEN"</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"store_v2_orders store_v2_products"</span><span class="token punctuation">,</span>
+  <span class="token property">"user"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">24654</span><span class="token punctuation">,</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"merchant@mybigcommerce.com"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"context"</span><span class="token operator">:</span> <span class="token string">"stores/STORE_HASH"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2>Required URIs</h2>
+<p>In addition to the Auth Callback URI, the following URI’s are required for BigCommerce Apps:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required?</th>
+<th>Event Discussion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load Callback URI</td>
+<td>Yes</td>
+<td>Called when the store owner or user clicks to load your app.</td>
+</tr>
+<tr>
+<td>Uninstall Callback URI</td>
+<td>No</td>
+<td>Called when the store owner clicks to uninstall your app.</td>
+</tr>
+<tr>
+<td>Remove User Callback URI</td>
+<td>No</td>
+<td>Called when the store admin revokes a user’s access to your app.</td>
+</tr>
+</tbody>
+</table>
+<p>Each event listed here triggers a GET request from BigCommerce containing a signed payload that allows your app to:</p>
+<ul>
+<li>Verify that the request came from BigCommerce.</li>
+<li>Identify the store.</li>
+<li>Identify the store owner or user.</li>
+</ul>
+<h3>Load Request and Response</h3>
+<p>Once your app has been installed, the store owner or user can click its icon in the control panel to launch it. This causes BigCommerce to send a GET request to the Load Callback URI that you provided during app registration. In a production environment, the Load Callback URI must be publicly available, fully qualified, and served over TLS/SSL.</p>
+<pre><code class="language-http"># The GET request contains a signed payload, as shown below.
+<span class="token request-line"><span class="token property">GET</span> /load?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1</span>
+<span class="token header-name keyword">Host:</span> app.example.com
+</code></pre>
+<p>Upon receiving a GET request to the Load Callback URI, your app needs to <a href="#processing-the-signed-payload">process the signed payload</a>. After processing the payload, your app returns its user interface as HTML. BigCommerce renders this inside of an iframe. Please see <a href="#designing-the-user-interface">User Interface Constraints</a> for important information about your app’s user interface.</p>
+<h3>Uninstall Request (Optional)</h3>
+<p>Store owners have the option to uninstall any app at any time. When a store owner uninstalls an app, the app’s OAuth token is revoked and the app cannot make requests to the Stores API on the store’s behalf anymore.</p>
+<p>You do not need to provide an Uninstall Callback URI. The lack of an Uninstall Callback URI does not prevent uninstallation. Instead, the Uninstall Callback URI allows you to track store owners who uninstall your app and to run cleanup operations, such as removing the store’s user accounts from your system.</p>
+<p>Should you choose to provide an Uninstall Callback URI, please note that it must be publicly available, fully qualified, and served over TLS/SSL. If provided, BigCommerce will send a GET request to your Uninstall Callback URI when a store owner clicks to uninstall your app.</p>
+<p>Example of a GET Request sent to the Uninstall Callback URI:</p>
+<pre><code class="language-http"><span class="token request-line"><span class="token property">GET</span> /uninstall?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1</span>
+	Host: app.example.com
+</code></pre>
+<p>Upon receiving the GET request, your app will need to process the signed payload.</p>
+<h3>Remove User Request (Optional)</h3>
+<p>If you have not enabled <a href="#multi-user-support">multi-user support</a>, you will not provide a Remove User Callback URI and can ignore this section. If you enable multi-user support, you can optionally specify a Remove User Callback URI. It must be fully qualified, publicly available, and served over TLS/SSL. BigCommerce will send a GETrequest to your Remove User Callback URI when a store admin revokes a user’s access to your app.</p>
+<p><strong>Example – Get Request sent to the Remove User URI</strong></p>
+<!--
+title: "Remove User URI"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-http"><span class="token request-line"><span class="token property">GET</span> /remove-user?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1</span>
+<span class="token header-name keyword">Host:</span> app.example.com
+</code></pre>
+<p>Upon receiving the GET request, your app will need to process the signed payload.</p>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--warning">
+<div class="HubBlock-content">
+<!-- theme: warning -->
+<blockquote>
+<p>Any HTML that you return in your response for uninstalling an app or removing a user will not render in the response.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<h2>Processing the Signed Payload</h2>
+<p>Processing the signed payload involves splitting and decoding it, verifying the HMAC signature, and processing the JSON object.</p>
+<h3>Splitting and Decoding the Signed Payload</h3>
+<p>The signed payload is a string containing a base64 url-encoded JSON string and a base64 url-encoded HMAC signature. The parts are delimited by the <code>.</code> character:</p>
+<pre><code class="language-javascript">encoded_json_string<span class="token punctuation">.</span>encoded_hmac_signature
+</code></pre>
+<p>To decode the signed payload, complete the following steps:</p>
+<ol>
+<li>Split signed_payload into its two parts at the <code>.</code> delimiter.</li>
+<li>Decode encoded_json_string using base64url.</li>
+<li>Convert the decoded JSON string into an object. See Processing the JSON object for more about this object.</li>
+<li>Decode encoded_hmac_signature using base64url.</li>
+<li>Use your client secret to verify the signature. See the next section for more details.</li>
+</ol>
+<h3>Verifying the HMAC Signature</h3>
+<p>To verify the payload, you need to sign the payload using your client secret, and confirm that it matches the signature that was sent in the request.</p>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--warning">
+<div class="HubBlock-content">
+<!-- theme:  -->
+<h3>Timing Attacks</h3>
+<blockquote>
+<p>To limit the vulnerability of your app to timing attacks, we recommend using a constant time-string comparison function, rather than the equality operator, to check that the signatures match.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">verifySignedRequest</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "verifySignedRequest"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-php"><span class="token keyword">function</span> <span class="token function">verifySignedRequest</span><span class="token punctuation">(</span><span class="token variable">$signedRequest</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">list</span><span class="token punctuation">(</span><span class="token variable">$encodedData</span><span class="token punctuation">,</span> <span class="token variable">$encodedSignature</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">explode</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'.'</span><span class="token punctuation">,</span> <span class="token variable">$signedRequest</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// decode the data</span>
+    <span class="token variable">$signature</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$encodedSignature</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$jsonStr</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$encodedData</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$jsonStr</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// confirm the signature</span>
+    <span class="token variable">$expectedSignature</span> <span class="token operator">=</span> <span class="token function">hash_hmac</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'sha256'</span><span class="token punctuation">,</span> <span class="token variable">$jsonStr</span><span class="token punctuation">,</span> <span class="token variable">$clientSecret</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$raw</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">hash_equals</span><span class="token punctuation">(</span><span class="token variable">$expectedSignature</span><span class="token punctuation">,</span> <span class="token variable">$signature</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">error_log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Bad signed request from BigCommerce!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--">
+<div class="HubBlock-content">
+<!-- theme:  -->
+<h3>!hash_equals</h3>
+<blockquote>
+<p>!hash_equals is available in PHP 5.6 and later. If you are running an older version of PHP, pull in a compatibility library such as the following: https://packagist.org/packages/realityking/hash_equals. BigCommerce’s sample app hello-world-app-php-silex app does this automatically.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">verify()</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "verify()"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">"base64"</span>
+<span class="token keyword">require</span> <span class="token string">"openssl"</span>
+
+<span class="token keyword">def</span> <span class="token function">verify</span><span class="token punctuation">(</span>signed_payload<span class="token punctuation">,</span> client_secret<span class="token punctuation">)</span>
+  message_parts <span class="token operator">=</span> signed_payload<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span>
+
+  encoded_json_payload <span class="token operator">=</span> message_parts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  encoded_hmac_signature <span class="token operator">=</span> message_parts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+  payload_object <span class="token operator">=</span> <span class="token constant">Base64</span><span class="token punctuation">.</span><span class="token function">strict_decode</span><span class="token punctuation">(</span>encoded_json_payload<span class="token punctuation">)</span>
+  provided_signature <span class="token operator">=</span> <span class="token constant">Base64</span><span class="token punctuation">.</span><span class="token function">strict_decode</span><span class="token punctuation">(</span>encoded_hmac_signature<span class="token punctuation">)</span>
+
+  expected_signature <span class="token operator">=</span> <span class="token constant">OpenSSL</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">HMAC</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">hexdigest</span><span class="token punctuation">(</span><span class="token string">"sha256"</span><span class="token punctuation">,</span> client_secret<span class="token punctuation">,</span> payload_object<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">false</span> <span class="token keyword">unless</span> <span class="token function">secure_compare</span><span class="token punctuation">(</span>expected_signature<span class="token punctuation">,</span> provided_signature<span class="token punctuation">)</span>
+
+  <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>payload_object<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">def</span> <span class="token function">secure_compare</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">false</span> <span class="token keyword">if</span> a<span class="token punctuation">.</span>blank<span class="token operator">?</span> <span class="token operator">||</span> b<span class="token punctuation">.</span>blank<span class="token operator">?</span> <span class="token operator">||</span> a<span class="token punctuation">.</span>bytesize <span class="token operator">!=</span> b<span class="token punctuation">.</span>bytesize
+  l <span class="token operator">=</span> a<span class="token punctuation">.</span>unpack <span class="token string">"C<span class="token interpolation"><span class="token delimiter tag">#{</span>a<span class="token punctuation">.</span>bytesize<span class="token delimiter tag">}</span></span>"</span>
+
+  res <span class="token operator">=</span> <span class="token number">0</span>
+  b<span class="token punctuation">.</span>each_byte <span class="token punctuation">{</span> <span class="token operator">|</span>byte<span class="token operator">|</span> res <span class="token operator">|</span><span class="token operator">=</span> byte <span class="token operator">^</span> l<span class="token punctuation">.</span>shift <span class="token punctuation">}</span>
+  res <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token keyword">end</span>
+
+</code></pre>
+<h3>Processing the JSON Object</h3>
+<p>The JSON object embedded in the signed_payload contains information about the BigCommerce store and the store owner or user.</p>
+<h3>Identifying the Store</h3>
+<p>Use the store information endpoint to identify the store to which the request pertains.</p>
+<h3>Interpreting the User Information</h3>
+<table>
+<thead>
+<tr>
+<th>Request type</th>
+<th>Multiple users enabled</th>
+<th>Multiple users not enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load</td>
+<td>Compare the user information to see if it matches that of the store owner (received at the time of <a href="#installation-and-update-sequence">app installation</a>) or that of an existing user. If the user information does not match either of these, then it represents a new user that you should add to your database or other storage.</td>
+<td>The information should match that of the store owner, received at the time of <a href="#installation-and-update-sequence">app installation</a>.</td>
+</tr>
+<tr>
+<td>Uninstall</td>
+<td>The user information should match that of the store owner. Only the store owner can uninstall your app.</td>
+<td>Should match the store owner.</td>
+</tr>
+<tr>
+<td>Remove user</td>
+<td>The user information should match one of the users that you have stored. After locating the stored user, delete it from your database or other storage.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h3>JSON Values</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Value Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user.id</td>
+<td>integer</td>
+<td>Unique identifier for the user who initiated the callback.</td>
+</tr>
+<tr>
+<td>user.email</td>
+<td>string</td>
+<td>Email address of the user who initiated the callback.</td>
+</tr>
+<tr>
+<td>owner.id</td>
+<td>integer</td>
+<td>Unique identifier for the user listed as the store owner.</td>
+</tr>
+<tr>
+<td>owner.email</td>
+<td>string</td>
+<td>Email address of the user listed as the store owner.</td>
+</tr>
+<tr>
+<td>context</td>
+<td>string</td>
+<td>The context value is part of the API path for this store and includes the store_hash.</td>
+</tr>
+<tr>
+<td>store_hash</td>
+<td>string</td>
+<td>Unique identifier for the store.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>float</td>
+<td>The time (in Unix time) when the callback was generated.</td>
+</tr>
+</tbody>
+</table>
+<div class="HubBlock-header">
+    <div class="HubBlock-header-title flex items-center">
+        <div class="HubBlock-header-name">User Information</div>
+    </div><div class="HubBlock-header-subtitle"></div>
+</div>
+<!--
+title: "User Information"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"user"</span><span class="token operator">:</span>
+         <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">9128</span><span class="token punctuation">,</span>
+        <span class="token property">"email"</span><span class="token operator">:</span><span class="token string">"user@mybigcommerce.com"</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token property">"owner"</span><span class="token operator">:</span>
+          <span class="token punctuation">{</span>
+         <span class="token property">"id"</span><span class="token operator">:</span><span class="token number">9128</span><span class="token punctuation">,</span>
+         <span class="token property">"email"</span><span class="token operator">:</span><span class="token string">"user@mybigcommerce.com"</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token property">"context"</span><span class="token operator">:</span><span class="token string">"stores/z4zn3wo"</span><span class="token punctuation">,</span>
+     <span class="token property">"store_hash"</span><span class="token operator">:</span><span class="token string">"z4zn3wo"</span><span class="token punctuation">,</span>
+     <span class="token property">"timestamp"</span><span class="token operator">:</span><span class="token number">1469823892.9123988</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2>Multi-User Support</h2>
+<p>When you register your app with BigCommerce, enabling multi-user support will allow store admins to manually authorize users – other than the store owner – to load the app.</p>
+<p>As soon as you enable multi-user support, the control panel of any store that has your app installed will be affected. If you already have an app published in the App Marketplace, be aware that this setting takes effect immediately. Therefore, we recommend testing your multi-user support using a separate app that is in draft status.</p>
+<p>Let your customers know that you’ve enabled this feature. Otherwise, they won’t know that they can start granting access to users.</p>
+<p>If multi-user support is added after your app has launched, the update will cause the app scopes to change and users will be alerted of the new permission request.</p>
+<h3>The Control Panel Experience</h3>
+<p>Store admins will be able to adjust user permissions to grant/deny other store users’ access to your app. The next time the user logs in, they will see any apps for which they have been granted access. The user can then click on the app icon in the left navigation to load it.
+Use your draft app and your sandbox store to review this behavior.</p>
+<h3>The Load Request</h3>
+<p>Apps that support multiple users can expect the email and ID of the user that initiated the callback in addition to the owner’s email and ID in the JSON object sent in the load request. If a load request is sent with information for a user you haven’t seen yet, you should provision the user account and associate it with the store in your database.</p>
+<p>Because you know the store owner’s email and ID from the App Installation sequence, your app can distinguish store owners from other users. This allows you to provide different user experiences based on the information in the load request. Here is a summary of the two types of users:</p>
+<ul>
+<li>Store owner: Can install, uninstall, and load apps.</li>
+<li>Users: Cannot install or uninstall apps. Permitted only to load the apps that a store admin has authorized.</li>
+</ul>
+<p>For further details, please see <a href="#load-request-and-response">Load Request and Response</a>.</p>
+<h3>The Remove User Request</h3>
+<p>In addition to their ability to add users, store admins can also remove users. This action generates a GET request to the Remove User Callback URI that you provided in My Apps. Your app the user identified in the request from its records.</p>
+<p>For further information, please see <a href="#remove-user-request-optional">Remove User Request</a>.</p>
+<h2>External App Installation</h2>
+<p>Apps can be installed from outside the BigCommerce control panel. For example, you could create an install link on your company’s site that directs the merchant to download your app. This section provides a step-by-step guide.</p>
+<h3>Create an Install Button</h3>
+<p>First, embed an install button like the one below, at any web location from which you’d like to enable app installation:</p>
+<!--
+    title: 
+    data: //s3.amazonaws.com/user-content.stoplight.io/6490/1539297285625
+-->
+<p><img src="//s3.amazonaws.com/user-content.stoplight.io/6490/1539297285625" alt=""></p>
+<p>Redirect anyone who presses your button to: <code>https://login.bigcommerce.com/app/&lt;your-app's-client-id&gt;/install</code></p>
+<h3>Configure Your Button</h3>
+<p>Upon clicking, your button should open a modal similar to the image below. We recommend a modal sized 900px wide by 450px high.</p>
+<!--
+    title: 
+    data: //s3.amazonaws.com/user-content.stoplight.io/6490/1539297431440
+-->
+<p><img src="//s3.amazonaws.com/user-content.stoplight.io/6490/1539297431440" alt=""></p>
+<p>Your button will link merchants to BigCommerce’s install endpoint for your application. Once the merchant clicks the link, they will be prompted to log in, then authorize your application, just like in the <a href="#installation-and-update-sequence">normal installation flow</a>.</p>
+<h3>Render Success/Failure Pages</h3>
+<p>Modify your application code to serve either a success or failure page, depending on whether the external installation was successful or unsuccessful.</p>
+<p>If you skip this step, your application will load in the iframe created by your button. To ensure a good experience for your merchants, we strongly recommend that you return a confirmation page, instead of allowing your application to be loaded in that modal.</p>
+<h3>Handling Errors</h3>
+<p>If your application’s installation was initiated and completed through an external link, BigCommerce will send your auth callback endpoint an extra parameter called external_install.
+If you receive this parameter and there are no errors, call:</p>
+<p><code>https://login.bigcommerce.com/app/&lt;your_app_client_id&gt;/install/succeeded</code></p>
+<p>If there were errors, call:
+<code>https://login.bigcommerce.com/app/&lt;your_app_client_id&gt;/install/failed</code></p>
+<p>Below is a sample code snippet of an auth callback that does this:</p>
+<!--
+title: "Auth Callback"
+subtitle: ""
+lineNumbers: true
+-->
+<pre><code class="language-lua">   if params['external_install']
+        return get 'https://login.bigcommerce.com/app/m8e1mkkmjw2xjinydqz7ie05to1y2nk/install/succeeded'
+    end
+
+    redirect '/'
+
+rescue => e
+    if params['external_install']
+        return get 'https://login.bigcommerce.com/app/m8e1mkkmjw2xjinydqz7ie05to1y2nk/install/failed'
+    end
+</code></pre>
+<p>Depending on which endpoint you call, we will render one of the following success/failed pages to the modal.</p>
+<h2>Designing the User Interface</h2>
+<p>BigDesign is a collection of reusable React components, design guidelines, and UI patterns that can be used to build interfaces matching the BigCommerce control panel. It is available as an <a href="https://www.npmjs.com/package/@bigcommerce/big-design" target="_blank">npm package</a>, which can be installed as a dependency in third-party apps, and as an <a href="https://github.com/bigcommerce" target="_blank">open source repository on GitHub.</a> BigDesign includes all the essential elements you need to construct a UI: buttons, forms, headings, and more. To get started using the components see our <a href="https://developer.bigcommerce.com/big-design/" target="_blank">BigDesign Playground</a>.</p>
+<h3>User Interface Constraints</h3>
+<p>Single-click apps benefit from a high level of integration with the BigCommerce platform. Users interacting with your app will enjoy a seamless experience. BigCommerce achieves this by rendering your app's user interface inside of an iframe within the control panel. To ensure acceptance into the App Marketplace, your app should be able to perform all of its functions inside of the iframe.</p>
+<p>While very usable and friendly, the iframe approach does require special attention from app developers. The remainder of this page discusses several functional areas to consider when designing and developing your app.</p>
+<h3>About Mixed Content</h3>
+<p>The BigCommerce control panel is served over TLS/SSL. Your app must be hosted on a web server that accepts and sends TLS/SSL requests. In addition, all of the resources referenced in the HTML that you present to the end users must be served over TLS/SSL. You may find protocol-agnostic addressing helpful.</p>
+<p>If the user interface retrieves images, scripts, or other assets over a connection not encrypted with TLS/SSL, the user will experience errors and possibly an inability to interact with your app. Before submitting your app, use an <a href="https://www.jitbit.com/sslcheck/" target="_blank">online crawler</a> to check for insecure content.</p>
+<h3>About Same-Origin Policies</h3>
+<p><a href="http://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">Same-origin policies</a> restrict apps running within iframes from performing certain activities, such as interacting with other services and making OAuth connections. While apps that operate within the BigCommerce iframe get strong preference during App Marketplace considerations, we sometimes make exceptions for apps that need to interact with, and authenticate to, other services. If your app requires this, we advise you to open a new tab for actions that cannot occur within the iframe.</p>
+<h3>About P3P and Cookies</h3>
+<p>Internet Explorer is one of the browsers that BigCommerce <a href="https://support.bigcommerce.com/s/article/Themes-Supported-Browsers" target="_blank">supports</a>, and our merchants do use it to access the control panel. If your app needs to set a cookie, you will need to craft a <a href="http://en.wikipedia.org/wiki/P3P" target="_blank">P3P policy</a>. Otherwise, your app will experience issues on Internet Explorer. Please see the following pages for more information:</p>
+<ul>
+<li><a href="http://www.techrepublic.com/blog/software-engineer/craft-a-p3p-policy-to-make-ie-behave/" target="_blank">Craft a P3P policy to make IE behave</a></li>
+<li><a href="http://blogs.msdn.com/b/ieinternals/archive/2013/09/17/simple-introduction-to-p3p-cookie-blocking-frame.aspx" target="_blank">MSDN Intro to P3P Cookie Blocking</a></li>
+</ul>
+<div class="HubBlock--callout">
+<div class="CalloutBlock--info">
+<div class="HubBlock-content">
+<!-- theme:  -->
+<h3>Microsoft No Longer Supports P3P</h3>
+<blockquote>
+<p>Support for P3P 1.0 has been removed in Windows 10 and will have minimal ongoing servicing for previous versions of Windows. <a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/mt146424(v=vs.85)?redirectedfrom=MSDN" target="_blank"><em>Microsoft</em></a></p>
+</blockquote>
+</div>
+</div>
+</div>
+<h2>Hosting Your App</h2>
+<p>BigCommerce stores are hosted on <a href="https://cloud.google.com/" target="_blank">Google Cloud Platform</a> in the <a href="https://cloud.google.com/compute/docs/regions-zones/" target="_blank">us-central1</a> region.</p>
+<p>Therefore, you can maximize performance of your app (in terms of latency to the public API) by hosting in the same region. There is no requirement to do so, and you may host wherever you like.</p>
+<h2>FAQ</h2>
+<h3>How can I make API calls?</h3>
+<p>We have built several <a href="https://developer.bigcommerce.com/tools-resources" target="_blank">Hello World</a> apps to get you started quickly. You can use these apps as a starting point or an example for building a Single-click app.</p>
+<p>If you’d like to make test API requests without the overhead of installing a draft app, you can generate <a href="https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_getting-api-credentials" target="_blank">API Credentials</a> by creating an API Account in your store’s control panel.</p>
+<h3>How can I sell my app?</h3>
+<p>The first step to listing an app in the BigCommerce App Marketplace is to apply to the BigCommerce <a href="https://www.bigcommerce.com/partners/" target="_blank">partner program</a>.</p>
+<p>For more details on including your app in the Marketplace, see <a href="https://developer.bigcommerce.com/api-docs/partner/app-store-approval-requirements" target="_blank">App Store Approval Requirements</a>.</p>
+<h2>Resources</h2>
+<h3>Tools</h3>
+<ul>
+<li><a href="https://www.jitbit.com/sslcheck/" target="_blank">Online Crawler</a> (JitBit)</li>
+</ul>
+<h3>Sample Apps</h3>
+<ul>
+<li><a href="https://github.com/bigcommerce/omniauth-bigcommerce" target="_blank">Ruby Hello World</a> (BigCommerce GitHub)</li>
+<li><a href="https://github.com/bigcommerce/hello-world-app-python-flask" target="_blank">Python Hello World</a> (BigCommerce GitHub)</li>
+</ul>
+<h3>Related Articles</h3>
+<ul>
+<li><a href="https://developer.bigcommerce.com/big-design/" target="_blank">Big Design Developer Playground</a></li>
+<li><a href="https://developer.bigcommerce.com/api-docs/getting-started/authentication" target="_blank">Authentication</a></li>
+<li><a href="https://developer.bigcommerce.com/api-docs/customers/customer-login-api" target="_blank">Customer Login API</a></li>
+<li><a href="https://developer.bigcommerce.com/api-docs/partner/app-store-approval-requirements" target="_blank">App Store Approval Requirements</a></li>
+<li><a href="https://support.bigcommerce.com/s/article/Store-API-Accounts#creating" target="_blank">Store Accounts</a> (Knowledge Base)</li>
+<li><a href="https://support.bigcommerce.com/s/article/Themes-Supported-Browsers" target="_blank">Supported Browsers</a> (Knowledge Base)</li>
+<li><a href="https://www.bigcommerce.com/partners/" target="_blank">BigCommerce Partners</a> (BigCommerce)</li>
+<li><a href="https://medium.com/bigcommerce-developer-blog/how-to-test-app-authentication-locally-with-ngrok-149150bfe4cf" target="_blank">How to Test App Authentication Locally with ngrok</a> (BigCommerce Developer Blog)</li>
+<li><a href="https://medium.com/bigcommerce-developer-blog/building-a-bigcommerce-app-using-laravel-and-react-711ceceb5006" target="_blank">Building a BigCommerce App Using Laravel and React</a> (BigCommerce Developer Blog)</li>
+<li><a href="https://medium.com/bigcommerce-developer-blog/bigdesign-build-native-looking-uis-with-the-bigcommerce-design-system-fb06a01a24f2" target="_blank">Big Design Tutorial</a> (BigCommerce Developer Blog)</li>
+</ul>
+<h3>Additonal Resources</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">Same Origin Policy</a> (Wikipedia)</li>
+<li><a href="https://www.techrepublic.com/blog/software-engineer/craft-a-p3p-policy-to-make-ie-behave/" target="_blank">Craft a P3P Policy to Make IE Behave</a> (Tech Republic)</li>
+<li><a href="https://blogs.msdn.microsoft.com/ieinternals/2013/09/17/a-quick-look-at-p3p/" target="_blank">Quick Look at P3P</a> (Microsoft Blogs)</li>
+<li><a href="https://cloud.google.com/" target="_blank">Google Cloud</a> (Google)</li>
+</ul>
+</div></div></div></div></div></div></div></div></div></div></div></div><div class="pin absolute flex z--1" role="presentation"><div class="h-full flex-1 bg-grey-lightest"></div><div class="h-full flex-1 bg-white"></div></div></div><div class="s-alert-wrapper"></div></div><script type="text/javascript">
+    window.__routeInfo = {"path":"api-docs/getting-started/building-apps-bigcommerce/building-apps","templateID":0,"sharedPropsHashes":{"nav":"ZHaw9F","sidebarTree":"Z427i9","namespace":"Zd6xn0"},"localProps":null,"allProps":{"nav":{"left":[{"title":"Dev Center","path":"/","image":"https://cdn6.bigcommerce.com/s-qtmbtj/product_images/uploaded_images/bigcommerce-logomark-darkbg.png"},{"path":"/api-docs","title":"API Docs"},{"path":"/api-reference","title":"API Reference"},{"path":"/stencil-docs","title":"Theme Docs"},{"path":"/tools-resources","title":"Tools"},{"path":"https://medium.com/bigcommerce-developer-blog","title":"Blog"},{"path":"/changelog","title":"Changelog"}],"right":[{"path":"https://devtools.bigcommerce.com","title":"My Apps"},{"path":"https://login.bigcommerce.com/signup","title":"Create Account"}]},"version":"1.3","sidebarTree":[{"treeData":[{"name":"Getting Started","noToggle":true,"openByDefault":true,"path":"/api-docs/getting-started","children":[{"name":"Quick Start","hasContent":true,"path":"/api-docs/getting-started/making-requests","href":"/api-docs/getting-started/making-requests"},{"name":"About Our API","hasContent":true,"path":"/api-docs/getting-started/about-our-api","href":"/api-docs/getting-started/about-our-api"},{"name":"Authentication","hasContent":true,"path":"/api-docs/getting-started/authentication","href":"/api-docs/getting-started/authentication","children":[{"name":"V2 and V3 REST APIs","hasContent":true,"path":"/api-docs/getting-started/authentication/rest-api-authentication","href":"/api-docs/getting-started/authentication/rest-api-authentication"}]},{"name":"Filtering","hasContent":true,"path":"/api-docs/getting-started/filtering","href":"/api-docs/getting-started/filtering"},{"name":"Best Practices","hasContent":true,"path":"/api-docs/getting-started/best-practices","href":"/api-docs/getting-started/best-practices"},{"name":"API Status Codes","hasContent":true,"path":"/api-docs/getting-started/api-status-codes","href":"/api-docs/getting-started/api-status-codes"},{"name":"Building Apps With BigCommerce","path":"/api-docs/getting-started/building-apps-bigcommerce","children":[{"name":"Types of Apps","hasContent":true,"path":"/api-docs/getting-started/building-apps-bigcommerce/types-of-apps","href":"/api-docs/getting-started/building-apps-bigcommerce/types-of-apps"},{"name":"Building an App","hasContent":true,"path":"/api-docs/getting-started/building-apps-bigcommerce/building-apps","href":"/api-docs/getting-started/building-apps-bigcommerce/building-apps"}]},{"name":"Webhooks","path":"/api-docs/getting-started/webhooks","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/getting-started/webhooks/about-webhooks","href":"/api-docs/getting-started/webhooks/about-webhooks"},{"name":"Webhooks Tutorial","hasContent":true,"token":{"name":"Tutorial"},"path":"/api-docs/getting-started/webhooks/setting-up-webhooks","href":"/api-docs/getting-started/webhooks/setting-up-webhooks"},{"name":"Webhook Events","hasContent":true,"token":{"name":"reference"},"path":"/api-docs/getting-started/webhooks/webhook-events","href":"/api-docs/getting-started/webhooks/webhook-events"}]}]},{"name":"Partner Information","noToggle":true,"openByDefault":true,"path":"/api-docs/partner","children":[{"name":"Becoming A Partner","hasContent":true,"path":"/api-docs/partner/becoming-a-partner","href":"/api-docs/partner/becoming-a-partner"},{"name":"App Store Approval Requirements","hasContent":true,"path":"/api-docs/partner/app-store-approval-requirements","href":"/api-docs/partner/app-store-approval-requirements"}]},{"name":"Catalog","noToggle":true,"openByDefault":true,"path":"/api-docs/catalog","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/catalog/products-overview","href":"/api-docs/catalog/products-overview"},{"name":"Currencies","path":"/api-docs/catalog/currencies","children":[{"name":"Currencies Overview","hasContent":true,"path":"/api-docs/catalog/currencies/currencies-overview","href":"/api-docs/catalog/currencies/currencies-overview"},{"name":"How Currencies Work","hasContent":true,"path":"/api-docs/catalog/currencies/how-currencies-work","href":"/api-docs/catalog/currencies/how-currencies-work"},{"name":"Endpoints","hasContent":true,"token":{"name":"reference"},"path":"/api-docs/catalog/currencies/payments-api","href":"/api-docs/catalog/currencies/payments-api","children":[{"name":"Currencies","path":"/api-docs/catalog/currencies/payments-api/currencies","children":[{"name":"Get all Currencies","hasContent":true,"token":{"name":"get"},"path":"/api-docs/catalog/currencies/payments-api/currencies/getcurrencies","href":"/api-docs/catalog/currencies/payments-api/currencies/getcurrencies"},{"name":"Delete all Currencies","hasContent":true,"token":{"name":"delete"},"path":"/api-docs/catalog/currencies/payments-api/currencies/deletecurrencies","href":"/api-docs/catalog/currencies/payments-api/currencies/deletecurrencies"},{"name":"Create a Currency","hasContent":true,"token":{"name":"post"},"path":"/api-docs/catalog/currencies/payments-api/currencies/postcurrencies","href":"/api-docs/catalog/currencies/payments-api/currencies/postcurrencies"},{"name":"Get a Currency","hasContent":true,"token":{"name":"get"},"path":"/api-docs/catalog/currencies/payments-api/currencies/getacurrency","href":"/api-docs/catalog/currencies/payments-api/currencies/getacurrency"},{"name":"Update a Currency","hasContent":true,"token":{"name":"put"},"path":"/api-docs/catalog/currencies/payments-api/currencies/updateacurrency","href":"/api-docs/catalog/currencies/payments-api/currencies/updateacurrency"},{"name":"Delete a Currency","hasContent":true,"token":{"name":"delete"},"path":"/api-docs/catalog/currencies/payments-api/currencies/deleteacurrency","href":"/api-docs/catalog/currencies/payments-api/currencies/deleteacurrency"}]}]}]},{"name":"Pricing Order","hasContent":true,"token":{"name":"reference"},"path":"/api-docs/catalog/pricing-order-operation","href":"/api-docs/catalog/pricing-order-operation"},{"name":"Price Lists","hasContent":true,"path":"/api-docs/catalog/price-list-overview","href":"/api-docs/catalog/price-list-overview"}]},{"name":"Store Management","noToggle":true,"openByDefault":true,"path":"/api-docs/store-management","children":[{"name":"Shipping","path":"/api-docs/store-management/shipping","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/store-management/shipping/shipping-overview","href":"/api-docs/store-management/shipping/shipping-overview"},{"name":"Shipper HQ","hasContent":true,"path":"/api-docs/store-management/shipping/shipper-hq","href":"/api-docs/store-management/shipping/shipper-hq"},{"name":"Shipping Provider API","hasContent":true,"path":"/api-docs/store-management/shipping/shipping-provider-api","href":"/api-docs/store-management/shipping/shipping-provider-api"}]}]},{"name":"Customers & Subscribers","noToggle":true,"openByDefault":true,"path":"/api-docs/customers","children":[{"name":"Overview ","hasContent":true,"path":"/api-docs/customers/customers-subscribers-overview","href":"/api-docs/customers/customers-subscribers-overview"},{"name":"Customer Login API","hasContent":true,"path":"/api-docs/customers/customer-login-api","href":"/api-docs/customers/customer-login-api"},{"name":"Current Customer API","hasContent":true,"path":"/api-docs/customers/current-customer-api","href":"/api-docs/customers/current-customer-api"}]},{"name":"Storefront","noToggle":true,"openByDefault":true,"path":"/api-docs/storefront","children":[{"name":"GraphQL","token":{"name":"new"},"path":"/api-docs/storefront/graphql","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/storefront/graphql/graphql-storefront-api-overview","href":"/api-docs/storefront/graphql/graphql-storefront-api-overview"},{"name":"Code Samples","hasContent":true,"token":{"name":"code samples"},"path":"/api-docs/storefront/graphql/graphql-storefront-api-samples","href":"/api-docs/storefront/graphql/graphql-storefront-api-samples"},{"name":"GraphQL Playground","hasContent":true,"path":"/api-docs/storefront/graphql/playground","href":"/api-docs/storefront/graphql/playground"},{"name":"GraphQL Explorer","hasContent":true,"path":"/api-docs/storefront/graphql/explorer","href":"/api-docs/storefront/graphql/explorer"},{"name":"Product List Example","hasContent":true,"path":"/api-docs/storefront/graphql/new-subpage","href":"/api-docs/storefront/graphql/new-subpage"},{"name":"Storefront Auth Token","hasContent":true,"token":{"name":"reference"},"path":"/api-docs/storefront/graphql/storefront-auth-token","href":"/api-docs/storefront/graphql/storefront-auth-token","children":[{"name":"API Token","path":"/api-docs/storefront/graphql/storefront-auth-token/api-token","children":[{"name":"Create a Token","hasContent":true,"token":{"name":"post"},"path":"/api-docs/storefront/graphql/storefront-auth-token/api-token/createtoken","href":"/api-docs/storefront/graphql/storefront-auth-token/api-token/createtoken"},{"name":"Revoke a Token","hasContent":true,"token":{"name":"delete"},"path":"/api-docs/storefront/graphql/storefront-auth-token/api-token/revoketoken","href":"/api-docs/storefront/graphql/storefront-auth-token/api-token/revoketoken"}]},{"name":"Customer Impersonation Token","path":"/api-docs/storefront/graphql/storefront-auth-token/customer-impersonation-token","children":[{"name":"Create a Token","hasContent":true,"token":{"name":"post"},"path":"/api-docs/storefront/graphql/storefront-auth-token/customer-impersonation-token/createtokenwithcustomerimpersonation","href":"/api-docs/storefront/graphql/storefront-auth-token/customer-impersonation-token/createtokenwithcustomerimpersonation"}]}]}]},{"name":"Scripts","hasContent":true,"path":"/api-docs/storefront/scripts-overview","href":"/api-docs/storefront/scripts-overview"},{"name":"Widgets","path":"/api-docs/storefront/widgets","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/storefront/widgets/widgets-overview","href":"/api-docs/storefront/widgets/widgets-overview"},{"name":"Widgets Tutorial","hasContent":true,"token":{"name":"tutorial"},"path":"/api-docs/storefront/widgets/widgets-tutorial","href":"/api-docs/storefront/widgets/widgets-tutorial"},{"name":"Widgets Code Samples","hasContent":true,"token":{"name":"code samples"},"path":"/api-docs/storefront/widgets/widgets-code-samples","href":"/api-docs/storefront/widgets/widgets-code-samples"}]}]},{"name":"Cart and Checkout","noToggle":true,"openByDefault":true,"path":"/api-docs/cart-and-checkout","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/cart-and-checkout/cart-and-checkout-overview","href":"/api-docs/cart-and-checkout/cart-and-checkout-overview"},{"name":"Working with Storefront APIs","hasContent":true,"token":{"name":"tutorial"},"path":"/api-docs/cart-and-checkout/working-sf-apis","href":"/api-docs/cart-and-checkout/working-sf-apis"},{"name":"Checkout SDK","hasContent":true,"path":"/api-docs/cart-and-checkout/checkout-sdk","href":"/api-docs/cart-and-checkout/checkout-sdk"},{"name":"Add to Cart URLs","hasContent":true,"path":"/api-docs/cart-and-checkout/add-to-cart-url","href":"/api-docs/cart-and-checkout/add-to-cart-url"},{"name":"Embedded Checkout","path":"/api-docs/cart-and-checkout/embedded-checkout","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/cart-and-checkout/embedded-checkout/embedded-checkout-overview","href":"/api-docs/cart-and-checkout/embedded-checkout/embedded-checkout-overview"},{"name":"Embedded Checkout Tutorial","hasContent":true,"path":"/api-docs/cart-and-checkout/embedded-checkout/embedded-checkout-tutorial","href":"/api-docs/cart-and-checkout/embedded-checkout/embedded-checkout-tutorial"}]}]},{"name":"Headless Commerce","noToggle":true,"openByDefault":true,"hasContent":true,"token":{"name":"GUIDE"},"path":"/api-docs/developers-guide-headless","href":"/api-docs/developers-guide-headless"},{"name":"Payments","noToggle":true,"openByDefault":true,"path":"/api-docs/payments","children":[{"name":"Payments API","hasContent":true,"path":"/api-docs/payments/payments-api-overview","href":"/api-docs/payments/payments-api-overview"}]},{"name":"Orders","noToggle":true,"openByDefault":true,"path":"/api-docs/orders","children":[{"name":"Overview","hasContent":true,"path":"/api-docs/orders/orders-overview","href":"/api-docs/orders/orders-overview"},{"name":"Orders API","hasContent":true,"path":"/api-docs/orders/orders-api-overview","href":"/api-docs/orders/orders-api-overview"}]}]}],"crumbs":[{"content":"API Docs","to":"/api-docs"},{"content":"Getting Started","to":"/api-docs/getting-started"},{"content":"Building Apps With BigCommerce","to":"/api-docs/getting-started/building-apps-bigcommerce"},{"content":"Building an App","to":"/api-docs/getting-started/building-apps-bigcommerce/building-apps"}],"namespace":{"id":9287,"name":"BigCommerce","path":"bigcommerce","kind":"group","full_path":"bigcommerce","parent_id":null},"page":{"meta":{"title":"Building an App - Building Apps With BigCommerce - Getting Started - API Docs","url":"/api-docs/getting-started/building-apps-bigcommerce/building-apps","description":"Building an App\n\n\n\nOn This Page\n\nOAuth Summary\n\nRequest Headers\n\nManaging Users Session Timeouts\n\nInstallation and Update Sequence\n\nReceiving the GET Re..."},"title":"Building an App","parsedPath":["pages","/api-docs","data","children",0,"data","children",6,"data","children",1],"rootPagePath":"/api-docs","path":"/api-docs/getting-started/building-apps-bigcommerce/building-apps","isSubpage":true,"route":{"path":"/building-apps"},"data":{"blocks":[{"type":"text","data":"# Building an App\r\n\r\n<div class=\"otp\" id=\"no-index\">\r\n\r\n### On This Page\r\n- [OAuth Summary](#oauth-summary)\r\n- [Request Headers](#request-headers)\r\n- [Managing Users Session Timeouts](#managing-users-session-timeouts)\r\n- [Installation and Update Sequence](#installation-and-update-sequence)\r\n- [Receiving the GET Request](#receiving-the-get-request)\r\n- [Responding to the GET Request](#responding-to-the-get-request)\r\n- [Making the POST Request](#making-the-post-request)\r\n- [Receiving the POST Response](#receiving-the-post-response)\r\n- [Required URIs](#required-uris)\r\n- [Processing the Signed Payload](#processing-the-signed-payload)\r\n- [Multi-User Support](#multi-user-support)\r\n- [External App Installation](#external-app-installation)\r\n- [Designing the User Interface](#designing-the-user-interface)\r\n- [Hosting Your App](#hosting-your-app)\r\n- [FAQ](#faq)\r\n- [Resources](#resources)\r\n\r\n</div>\r\n\r\n## OAuth Summary\r\n\r\nAPI token creation is a permission reserved for the [store owner](https://forum.bigcommerce.com/s/article/Store-API-Accounts#creating) user account. An app can request authentication “on behalf” of a store owner, allowing the app to make API requests against store data.\r\n\r\nTo test an app before release, apply for a [sandbox](https://www.bigcommerce.com/partners/) store.\r\n \r\n- When a merchant clicks your app's Install button in the control panel, a [/GET request](#receiving-the-get-request) is sent to your app's [Auth callback URL](#receiving-the-get-request). \r\n- The /GET request sent from BigCommerce contains a `code` or temporary access token, `client_id`, `client_secret`, `scopes` and [other information](#receiving-the-get-request). Your Auth Callback URL needs to be served over https. You should also have access to your app's server logs which will allow you to see the information in the request.\r\n- Your app needs to [respond](#responding-to-the-get-request) to the /GET  with HTML that will be rendered in an iframe in the store's control panel.\r\n- Your app then needs to make a /POST request back to BigCommerce that contains the code, client_id and client secret. This should be done programmatically. \r\n- BigCommerce will respond with a permanent Oauth token authorized against the store that has installed your app.\r\n- After installation, the `store_hash` and `access_token` should be stored somewhere secure so the app does not lose its authorization. \r\n\r\n## Request Headers\r\n\r\nAPI requests are authenticated by the following HTTP headers:\r\n\r\n* `X-Auth-Client` -- The Client ID of the requesting app. \r\n* `X-Auth-Token` -- Access token authorizing an app to access store data on behalf of a user.\r\n\r\nIn addition, while not all resources require the Accept and Content-Type headers, many do. To ensure that your calls succeed, always include these headers. For more details on request headers and their accepted values, see [Request Headers](https://developer.bigcommerce.com/api-docs/getting-started/about-our-api#request-headers).\r\n\r\n## Managing Users Session Timeouts\r\n\r\nWe recommend that you add BigCommerce’s JavaScript SDK to your Single-Click Apps to protect your apps’ users from getting logged out of the BigCommerce control panel after a period of idleness. To include our SDK, add this script tag to your Single-Click App:\r\n`<"+"script src=\"//cdn.bigcommerce.com/jssdk/bc-sdk.js\">`\r\n\r\nOptionally, you can pass a logout callback function within the initialization call:\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">Logout Callback</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"Logout Callback\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```javascript\r\nBigcommerce.init({\r\n      onLogout: callback\r\n});\r\n```\r\n\r\nThis callback function will run when the user explicitly logs out of the BigCommerce control panel or is automatically logged out. The callback will allow your app to respond to this logout appropriately.\r\n\r\n## Installation and Update Sequence\r\n\r\nThe purpose of the App Installation sequence is to obtain an Oauth token for the store installing the app, using the Client ID and Secret from Dev Tools. \r\n\r\nA user kicks off the installation or update sequence from within a store's control panel by clicking the “Install” button from your app details page or by clicking an installed app to update its scopes. BigCommerce redirects the user to the Auth Callback URI provided during app registration. The Auth Callback URI must be publicly available, fully qualified, and served over TLS.\r\n\r\n<!--\r\n    title: #### App Installation Sequence\r\n\r\n    data: //s3.amazonaws.com/user-content.stoplight.io/6012/1536263813949\r\n-->\r\n\r\n#### App Installation Sequence\r\n![#### App Installation Sequence\r\n](//s3.amazonaws.com/user-content.stoplight.io/6012/1536263813949 \"#### App Installation Sequence\r\n\")\r\n\r\n### Handling Requests Securely\r\n\r\nThe request comes from the client browser, rather than directly from BigCommerce. This allows you to use a non-publicly-available Auth Callback URI while testing your app.\r\n\r\nFor security, Auth and Load callbacks should be handled server-side. If you are building a client-side application (such as an AngularJS Single Page App), you should handle Auth and Load callbacks outside that application. Use a separate service that accepts the Auth and Load callback requests, generates tokens, validates requests, and then redirects the user to your client-side app’s entry point.\r\n\r\n## Receiving the GET Request\r\n\r\nThe GET request to your Auth Callback URI contains a temporary code that you can exchange for a permanent OAuth token. It also includes a unique value that identifies the store installing or updating your app, as well as authorized scopes.\r\n\r\nThe following table details the full list of parameters and values included in the GET request from BigCommerce to your Auth Callback URI. BigCommerce passes these within the URI itself as query parameters.\r\n\r\n| Parameter | Description |\r\n|-|-|\r\n| code | Temporary code to exchange for a permanent OAuth token. See [Making the POST request](#building-apps_making-post-request) below for more information about this exchange. |\r\n| scope | List of scopes authorized by the user. As a best practice, your app should validate this list to ensure that it matches the app&#39;s needs, and fail if it does not. However, at this time, the user does not have any opportunity to pick and choose between scopes. The dialog presented to the user requires the user to approve all scopes or none. |\r\n| context | The store hash: a unique value that identifies the store on which a logged-in user has clicked to install or your app. BigCommerce passes this along with a context path as follows: `stores/{store_hash}`. Save the store hash value, because you will need to pass it in all your requests to the API. |\r\n\r\n**Example – Initial Installation**\r\n\r\nThis example initiates the token exchange, with a requested scope of store_v2_orders:\r\n\r\n<!--\r\ntitle: \"Initial Installation\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```http\r\nGET /auth?code=qr6h3thvbvag2ffq&scope=store_v2_orders&context=stores/g5cd38 HTTP/1.1  \r\nHost: app.example.com\r\n```\r\n\r\n### Example – Updating Scopes\r\nThe following example requests a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:\r\n\r\n<!--\r\ntitle: \"Updating Scopes\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```http\r\nGET /auth?code=qr6h3thvbvag2ffq&scope=store_v2_orders+store_v2_products&context=stores/g5cd38 HTTP/1.1  \r\nHost: app.example.com\r\n```\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--info\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme:  -->\r\n\r\n### Token Invalidation\r\n> When your app receives a new token, any previously issued token is invalidated.\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n## Responding to the GET Request\r\n\r\nUpon receiving the GET request at your Auth Callback URI, your app should return some HTML to the merchant browser. BigCommerce renders this in an iframe inside of the control panel. It could be a form that collects further information from the user, or you could redirect the user to your app’s main page. If you do not pass back some HTML, the user will be left looking at a blank screen. Such an app would not be accepted into the App Marketplace.\r\n\r\n## Making the POST Request\r\n\r\nThe POST request’s primary purpose is to exchange the temporary access code for a permanent OAuth token. However, your app must pass a number of additional values to accomplish the exchange. Pass the parameters and their values inside the request body, using query parameters and URL-encoding. To achieve this, you must include one of the following HTTP headers:\r\n\r\n`Content-Type: application/x-www-form-urlencoded` or `Content-Type: application/json`\r\n\r\nMake the POST request to the following address: `https://login.bigcommerce.com/oauth2/token`\r\n\r\n### Initial Installation\r\n\r\nUpon receiving the POST request during inital installation, BigCommerce marks the status of your app as “Installed”, removes the progress-indicator overlay, and places your app icon in the control panel’s left-hand navigation. With the progress-indicator overlay removed, the user can interact with the HTML that you returned in your GET response.\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--info\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme:  -->\r\n\r\n### Receiving the POST request\r\n> Upon receiving the POST request during initial installation BigCommerce removes the update prompt from the control panel.\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n### Parameters\r\n\r\nInclude values for each of the following parameters.\r\n\r\n| Parameter | Description |\r\n|-|-|\r\n| client_id | The Client ID for your app, obtained during [registration](https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_client-id-secret). |\r\n| client_secret | The Client Secret for your app, obtained during [registration](https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_client-id-secret). |\r\n| code | Temporary access code received in the [GET request](/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request) discussed above. |\r\n| scope | List of OAuth scopes received in the [GET request](/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request) discussed above. |\r\n| grant_type | Always use the following: authorization_code. |\r\n| redirect_uri | Must be identical to your registered Auth Callback URI. |\r\n| context | The store hash received in the [GET request](/api-docs/getting-started/building-apps-bigcommerce/building-apps#receiving-the-get-request), in the format: `stores/{_store_hash_}` |\r\n\r\n**Examples – Initial Installation**\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">HTTP</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"HTTP\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```http\r\nPOST /oauth2/token HTTP/1.1\r\nHost: login.bigcommerce.com\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: 186\r\nclient_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&code=qr6h3thvbvag2ffq&scope=store_v2_orders&grant_type=authorization_code&redirect_uri=https://app.example.com/oauth&context=stores/{STORE_HASH}\r\n```\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">PHP</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"PHP\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```php\r\nuse Bigcommerce\\Api\\Connection;\r\n$tokenUrl = \"https://login.bigcommerce.com/oauth2/token\";\r\n$connection = new Connection();\r\n$connection->useUrlencoded();\r\n$response = $connection->post($tokenUrl, array(\r\n    \"client_id\" => \"CLIENT_ID\",\r\n    \"client_secret\" => \"CLIENT_SECRET\",\r\n    \"redirect_uri\" => \"https://app.example.com/oauth\",\r\n    \"grant_type\" => \"authorization_code\",\r\n    \"code\" => $request->get(\"code\"),\r\n    \"scope\" => $request->get(\"scope\"),\r\n    \"context\" => $request->get(\"context\"),\r\n));\r\n$token = $response->access_token;\r\n```\r\n\r\n**Examples – Updating Scopes**\r\n\r\nThe following examples request a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">HTTP</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"HTTP\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```http\r\nPOST /oauth2/token HTTP/1.1\r\nHost: login.bigcommerce.com\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: 186\r\nclient_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&scope=store_v2_orders+store_v2_products&grant_type=authorization_code&redirect_uri=https://app.example.com/oauth&context=stores/{STORE_HASH}\r\n```\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">PHP</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"PHP\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```php\r\nuse Bigcommerce\\Api\\Connection;\r\n$tokenUrl = \"https://login.bigcommerce.com/oauth2/token\";\r\n$connection = new Connection();\r\n$connection->useUrlencoded();\r\n$response = $connection->post($tokenUrl, array(\r\n    \"client_id\" => \"CLIENT_ID\",\r\n    \"client_secret\" => \"CLIENT_SECRET\",\r\n    \"redirect_uri\" => \"https://app.example.com/oauth\",\r\n    \"grant_type\" => \"authorization_code\",\r\n    \"code\" => $request->get(\"code\"),\r\n    \"scope\" => $request->get(\"scope\"),\r\n    \"context\" => $request->get(\"context\"),\r\n));\r\n\r\n$token = $response->access_token;\r\n```\r\n\r\n## Receiving the POST Response\r\n\r\nThe POST response will include a JSON object containing the permanent OAuth token, user information, and other values. Upon receiving the permanent OAuth token, store it securely. You should also store the user and store hash values, to identify the user and store at load and uninstall. The following sections detail the contents of the JSON body.\r\n\r\n### JSON Values\r\n| Name | Data Type | Value Description |\r\n|-|-|-|\r\n| access_token | string | The permanent OAuth token that your app can use to make requests to the Stores API on behalf of the user. Store this value securely. |\r\n| scope | string | List of authorization scopes. |\r\n| id | integer | Unique identifier for the user. Store this value to identify the user at load and uninstall. |\r\n| email | string | The user’s email address. Store this value to identify the user at load and uninstall. |\r\n| context | string | The store hash, as well as a base path: `stores/{_store_hash_}` |\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">Initial Installation</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"Initial Installation\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```json\r\n{\r\n  \"access_token\": \"ACCESS_TOKEN\",\r\n  \"scope\": \"store_v2_orders\",\r\n  \"user\": {\r\n    \"id\": 24654,\r\n    \"email\": \"merchant@mybigcommerce.com\"\r\n  },\r\n  \"context\": \"stores/STORE_HASH\"\r\n}\r\n```\r\n\r\nUpdate requests will refresh the payload’s access_token and scope values. Here again, the following example requests a scope of store_v2_products, in addition to the initially requested scope of store_v2_orders:\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">Updating Scopes</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"Updating Scopes\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```json\r\n{\r\n  \"access_token\": \"ACCESS_TOKEN\",\r\n  \"scope\": \"store_v2_orders store_v2_products\",\r\n  \"user\": {\r\n    \"id\": 24654,\r\n    \"email\": \"merchant@mybigcommerce.com\"\r\n  },\r\n  \"context\": \"stores/STORE_HASH\"\r\n}\r\n```\r\n\r\n## Required URIs\r\nIn addition to the Auth Callback URI, the following URI’s are required for BigCommerce Apps:\r\n\r\n| Name | Required? | Event Discussion |\r\n|-|-|-|\r\n| Load Callback URI | Yes | Called when the store owner or user clicks to load your app. |\r\n| Uninstall Callback URI | No | Called when the store owner clicks to uninstall your app. |\r\n| Remove User Callback URI | No | Called when the store admin revokes a user's access to your app. |\r\n\r\nEach event listed here triggers a GET request from BigCommerce containing a signed payload that allows your app to:\r\n- Verify that the request came from BigCommerce.\r\n- Identify the store.\r\n- Identify the store owner or user.\r\n\r\n### Load Request and Response\r\n\r\nOnce your app has been installed, the store owner or user can click its icon in the control panel to launch it. This causes BigCommerce to send a GET request to the Load Callback URI that you provided during app registration. In a production environment, the Load Callback URI must be publicly available, fully qualified, and served over TLS/SSL.\r\n\r\n```http\r\n# The GET request contains a signed payload, as shown below.\r\nGET /load?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1\r\nHost: app.example.com\r\n```\r\n\r\nUpon receiving a GET request to the Load Callback URI, your app needs to [process the signed payload](#processing-the-signed-payload). After processing the payload, your app returns its user interface as HTML. BigCommerce renders this inside of an iframe. Please see [User Interface Constraints](#designing-the-user-interface) for important information about your app’s user interface.\r\n\r\n### Uninstall Request (Optional)\r\n\r\nStore owners have the option to uninstall any app at any time. When a store owner uninstalls an app, the app’s OAuth token is revoked and the app cannot make requests to the Stores API on the store’s behalf anymore.\r\n\r\nYou do not need to provide an Uninstall Callback URI. The lack of an Uninstall Callback URI does not prevent uninstallation. Instead, the Uninstall Callback URI allows you to track store owners who uninstall your app and to run cleanup operations, such as removing the store’s user accounts from your system.\r\n\r\nShould you choose to provide an Uninstall Callback URI, please note that it must be publicly available, fully qualified, and served over TLS/SSL. If provided, BigCommerce will send a GET request to your Uninstall Callback URI when a store owner clicks to uninstall your app.\r\n\r\nExample of a GET Request sent to the Uninstall Callback URI:\r\n\r\n```http\r\nGET /uninstall?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1\r\n\tHost: app.example.com\r\n```\r\n\r\nUpon receiving the GET request, your app will need to process the signed payload.\r\n\r\n### Remove User Request (Optional)\r\n\r\nIf you have not enabled [multi-user support](#multi-user-support), you will not provide a Remove User Callback URI and can ignore this section. If you enable multi-user support, you can optionally specify a Remove User Callback URI. It must be fully qualified, publicly available, and served over TLS/SSL. BigCommerce will send a GETrequest to your Remove User Callback URI when a store admin revokes a user’s access to your app. \r\n\r\n**Example -- Get Request sent to the Remove User URI**\r\n\r\n<!--\r\ntitle: \"Remove User URI\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```http\r\nGET /remove-user?signed_payload=hw9fhkx2ureq.t73sk8y80jx9 HTTP/1.1\r\nHost: app.example.com\r\n```\r\n\r\nUpon receiving the GET request, your app will need to process the signed payload.\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--warning\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme: warning -->\r\n\r\n> Any HTML that you return in your response for uninstalling an app or removing a user will not render in the response.\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n## Processing the Signed Payload\r\n\r\nProcessing the signed payload involves splitting and decoding it, verifying the HMAC signature, and processing the JSON object.\r\n\r\n### Splitting and Decoding the Signed Payload\r\n\r\nThe signed payload is a string containing a base64 url-encoded JSON string and a base64 url-encoded HMAC signature. The parts are delimited by the `.` character:\r\n\r\n```javascript\r\nencoded_json_string.encoded_hmac_signature\r\n```\r\n\r\nTo decode the signed payload, complete the following steps:\r\n1. Split signed_payload into its two parts at the `.` delimiter.\r\n2. Decode encoded_json_string using base64url.\r\n3. Convert the decoded JSON string into an object. See Processing the JSON object for more about this object.\r\n4. Decode encoded_hmac_signature using base64url.\r\n5. Use your client secret to verify the signature. See the next section for more details.\r\n\r\n### Verifying the HMAC Signature\r\n\r\nTo verify the payload, you need to sign the payload using your client secret, and confirm that it matches the signature that was sent in the request.\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--warning\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme:  -->\r\n\r\n### Timing Attacks\r\n> To limit the vulnerability of your app to timing attacks, we recommend using a constant time-string comparison function, rather than the equality operator, to check that the signatures match.\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">verifySignedRequest</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"verifySignedRequest\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```php\r\nfunction verifySignedRequest($signedRequest)\r\n{\r\n    list($encodedData, $encodedSignature) = explode('.', $signedRequest, 2);\r\n\r\n    // decode the data\r\n    $signature = base64_decode($encodedSignature);\r\n        $jsonStr = base64_decode($encodedData);\r\n    $data = json_decode($jsonStr, true);\r\n\r\n    // confirm the signature\r\n    $expectedSignature = hash_hmac('sha256', $jsonStr, $clientSecret(), $raw = false);\r\n    if (!hash_equals($expectedSignature, $signature)) {\r\n        error_log('Bad signed request from BigCommerce!');\r\n        return null;\r\n    }\r\n    return $data;\r\n}\r\n```\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme:  -->\r\n\r\n### !hash_equals\r\n> !hash_equals is available in PHP 5.6 and later. If you are running an older version of PHP, pull in a compatibility library such as the following: https://packagist.org/packages/realityking/hash_equals. BigCommerce’s sample app hello-world-app-php-silex app does this automatically.\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">verify()</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"verify()\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```ruby\r\nrequire \"base64\"\r\nrequire \"openssl\"\r\n\r\ndef verify(signed_payload, client_secret)\r\n  message_parts = signed_payload.split(\".\")\r\n\r\n  encoded_json_payload = message_parts[0]\r\n  encoded_hmac_signature = message_parts[1]\r\n\r\n  payload_object = Base64.strict_decode(encoded_json_payload)\r\n  provided_signature = Base64.strict_decode(encoded_hmac_signature)\r\n\r\n  expected_signature = OpenSSL::HMAC::hexdigest(\"sha256\", client_secret, payload_object)\r\n\r\n  return false unless secure_compare(expected_signature, provided_signature)\r\n\r\n  JSON.parse(payload_object)\r\nend\r\n\r\ndef secure_compare(a, b)\r\n  return false if a.blank? || b.blank? || a.bytesize != b.bytesize\r\n  l = a.unpack \"C#{a.bytesize}\"\r\n\r\n  res = 0\r\n  b.each_byte { |byte| res |= byte ^ l.shift }\r\n  res == 0\r\nend\r\n\r\n```\r\n\r\n### Processing the JSON Object\r\n\r\nThe JSON object embedded in the signed_payload contains information about the BigCommerce store and the store owner or user.\r\n\r\n### Identifying the Store\r\nUse the store information endpoint to identify the store to which the request pertains.\r\n\r\n### Interpreting the User Information\r\n\r\n| Request type | Multiple users enabled | Multiple users not enabled |\r\n|-|-|-|\r\n| Load | Compare the user information to see if it matches that of the store owner (received at the time of [app installation](#installation-and-update-sequence)) or that of an existing user. If the user information does not match either of these, then it represents a new user that you should add to your database or other storage. | The information should match that of the store owner, received at the time of [app installation](#installation-and-update-sequence). |\r\n| Uninstall | The user information should match that of the store owner. Only the store owner can uninstall your app. | Should match the store owner. |\r\n| Remove user | The user information should match one of the users that you have stored. After locating the stored user, delete it from your database or other storage. | N/A |\r\n\r\n### JSON Values\r\n\r\n| Name | Data Type | Value Description |\r\n|-|-|-|\r\n| user.id | integer | Unique identifier for the user who initiated the callback. |\r\n| user.email | string | Email address of the user who initiated the callback. |\r\n| owner.id | integer | Unique identifier for the user listed as the store owner. |\r\n| owner.email | string | Email address of the user listed as the store owner. |\r\n| context | string | The context value is part of the API path for this store and includes the store_hash. |\r\n| store_hash | string |Unique identifier for the store. |\r\n| timestamp | float | The time (in Unix time) when the callback was generated.|\r\n\r\n<div class=\"HubBlock-header\">\r\n    <div class=\"HubBlock-header-title flex items-center\">\r\n        <div class=\"HubBlock-header-name\">User Information</div>\r\n    </div><div class=\"HubBlock-header-subtitle\"></div>\r\n</div>\r\n\r\n<!--\r\ntitle: \"User Information\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```json\r\n{\r\n    \"user\":\r\n         {\r\n        \"id\":9128,\r\n        \"email\":\"user@mybigcommerce.com\"\r\n     },\r\n     \"owner\":\r\n          {\r\n         \"id\":9128,\r\n         \"email\":\"user@mybigcommerce.com\"\r\n     },\r\n     \"context\":\"stores/z4zn3wo\",\r\n     \"store_hash\":\"z4zn3wo\",\r\n     \"timestamp\":1469823892.9123988\r\n}\r\n```\r\n\r\n## Multi-User Support\r\n\r\nWhen you register your app with BigCommerce, enabling multi-user support will allow store admins to manually authorize users – other than the store owner – to load the app. \r\n\r\nAs soon as you enable multi-user support, the control panel of any store that has your app installed will be affected. If you already have an app published in the App Marketplace, be aware that this setting takes effect immediately. Therefore, we recommend testing your multi-user support using a separate app that is in draft status.\r\n\r\nLet your customers know that you’ve enabled this feature. Otherwise, they won’t know that they can start granting access to users.\r\n\r\nIf multi-user support is added after your app has launched, the update will cause the app scopes to change and users will be alerted of the new permission request.\r\n\r\n### The Control Panel Experience\r\nStore admins will be able to adjust user permissions to grant/deny other store users’ access to your app. The next time the user logs in, they will see any apps for which they have been granted access. The user can then click on the app icon in the left navigation to load it.\r\nUse your draft app and your sandbox store to review this behavior.\r\n\r\n### The Load Request\r\nApps that support multiple users can expect the email and ID of the user that initiated the callback in addition to the owner’s email and ID in the JSON object sent in the load request. If a load request is sent with information for a user you haven’t seen yet, you should provision the user account and associate it with the store in your database.\r\n\r\nBecause you know the store owner’s email and ID from the App Installation sequence, your app can distinguish store owners from other users. This allows you to provide different user experiences based on the information in the load request. Here is a summary of the two types of users:\r\n\r\n- Store owner: Can install, uninstall, and load apps.\r\n- Users: Cannot install or uninstall apps. Permitted only to load the apps that a store admin has authorized.\r\n\r\nFor further details, please see [Load Request and Response](#load-request-and-response).\r\n\r\n### The Remove User Request\r\nIn addition to their ability to add users, store admins can also remove users. This action generates a GET request to the Remove User Callback URI that you provided in My Apps. Your app the user identified in the request from its records.\r\n\r\nFor further information, please see [Remove User Request](#remove-user-request-optional).\r\n\r\n## External App Installation\r\n\r\nApps can be installed from outside the BigCommerce control panel. For example, you could create an install link on your company’s site that directs the merchant to download your app. This section provides a step-by-step guide.\r\n\r\n### Create an Install Button\r\n\r\nFirst, embed an install button like the one below, at any web location from which you’d like to enable app installation:\r\n\r\n<!--\r\n    title: \r\n    data: //s3.amazonaws.com/user-content.stoplight.io/6490/1539297285625\r\n-->\r\n\r\n![](//s3.amazonaws.com/user-content.stoplight.io/6490/1539297285625 \"\")\r\n\r\nRedirect anyone who presses your button to: `https://login.bigcommerce.com/app/<your-app's-client-id>/install`\r\n\r\n### Configure Your Button\r\nUpon clicking, your button should open a modal similar to the image below. We recommend a modal sized 900px wide by 450px high.\r\n\r\n<!--\r\n    title: \r\n    data: //s3.amazonaws.com/user-content.stoplight.io/6490/1539297431440\r\n-->\r\n\r\n![](//s3.amazonaws.com/user-content.stoplight.io/6490/1539297431440 \"\")\r\n\r\nYour button will link merchants to BigCommerce’s install endpoint for your application. Once the merchant clicks the link, they will be prompted to log in, then authorize your application, just like in the [normal installation flow](#installation-and-update-sequence).\r\n\r\n### Render Success/Failure Pages\r\n\r\nModify your application code to serve either a success or failure page, depending on whether the external installation was successful or unsuccessful.\r\n\r\nIf you skip this step, your application will load in the iframe created by your button. To ensure a good experience for your merchants, we strongly recommend that you return a confirmation page, instead of allowing your application to be loaded in that modal.\r\n\r\n### Handling Errors\r\n\r\nIf your application’s installation was initiated and completed through an external link, BigCommerce will send your auth callback endpoint an extra parameter called external_install.\r\nIf you receive this parameter and there are no errors, call:\r\n\r\n`https://login.bigcommerce.com/app/<your_app_client_id>/install/succeeded`\r\n\r\nIf there were errors, call:\r\n`https://login.bigcommerce.com/app/<your_app_client_id>/install/failed`\r\n\r\nBelow is a sample code snippet of an auth callback that does this:\r\n\r\n<!--\r\ntitle: \"Auth Callback\"\r\nsubtitle: \"\"\r\nlineNumbers: true\r\n-->\r\n\r\n```lua\r\n   if params['external_install']\r\n        return get 'https://login.bigcommerce.com/app/m8e1mkkmjw2xjinydqz7ie05to1y2nk/install/succeeded'\r\n    end\r\n\r\n    redirect '/'\r\n\r\nrescue => e\r\n    if params['external_install']\r\n        return get 'https://login.bigcommerce.com/app/m8e1mkkmjw2xjinydqz7ie05to1y2nk/install/failed'\r\n    end\r\n```\r\n\r\nDepending on which endpoint you call, we will render one of the following success/failed pages to the modal.\r\n\r\n## Designing the User Interface\r\n\r\nBigDesign is a collection of reusable React components, design guidelines, and UI patterns that can be used to build interfaces matching the BigCommerce control panel. It is available as an [npm package](https://www.npmjs.com/package/@bigcommerce/big-design), which can be installed as a dependency in third-party apps, and as an [open source repository on GitHub.](https://github.com/bigcommerce) BigDesign includes all the essential elements you need to construct a UI: buttons, forms, headings, and more. To get started using the components see our [BigDesign Playground](https://developer.bigcommerce.com/big-design/). \r\n\r\n### User Interface Constraints\r\n\r\nSingle-click apps benefit from a high level of integration with the BigCommerce platform. Users interacting with your app will enjoy a seamless experience. BigCommerce achieves this by rendering your app&#39;s user interface inside of an iframe within the control panel. To ensure acceptance into the App Marketplace, your app should be able to perform all of its functions inside of the iframe.\r\n\r\nWhile very usable and friendly, the iframe approach does require special attention from app developers. The remainder of this page discusses several functional areas to consider when designing and developing your app.\r\n\r\n### About Mixed Content\r\n\r\nThe BigCommerce control panel is served over TLS/SSL. Your app must be hosted on a web server that accepts and sends TLS/SSL requests. In addition, all of the resources referenced in the HTML that you present to the end users must be served over TLS/SSL. You may find protocol-agnostic addressing helpful.\r\n\r\nIf the user interface retrieves images, scripts, or other assets over a connection not encrypted with TLS/SSL, the user will experience errors and possibly an inability to interact with your app. Before submitting your app, use an <a href=\"https://www.jitbit.com/sslcheck/\" target=\"_blank\">online crawler</a> to check for insecure content.\r\n\r\n### About Same-Origin Policies\r\n\r\n<a href=\"http://en.wikipedia.org/wiki/Same-origin_policy\" target=\"_blank\">Same-origin policies</a> restrict apps running within iframes from performing certain activities, such as interacting with other services and making OAuth connections. While apps that operate within the BigCommerce iframe get strong preference during App Marketplace considerations, we sometimes make exceptions for apps that need to interact with, and authenticate to, other services. If your app requires this, we advise you to open a new tab for actions that cannot occur within the iframe.\r\n\r\n### About P3P and Cookies\r\n\r\nInternet Explorer is one of the browsers that BigCommerce [supports](https://support.bigcommerce.com/s/article/Themes-Supported-Browsers), and our merchants do use it to access the control panel. If your app needs to set a cookie, you will need to craft a <a href=\"http://en.wikipedia.org/wiki/P3P\" target=\"_blank\">P3P policy</a>. Otherwise, your app will experience issues on Internet Explorer. Please see the following pages for more information:\r\n\r\n*   <a href=\"http://www.techrepublic.com/blog/software-engineer/craft-a-p3p-policy-to-make-ie-behave/\" target=\"_blank\">Craft a P3P policy to make IE behave</a>\r\n*   <a href=\"http://blogs.msdn.com/b/ieinternals/archive/2013/09/17/simple-introduction-to-p3p-cookie-blocking-frame.aspx\" target=\"_blank\">MSDN Intro to P3P Cookie Blocking</a>\r\n\r\n<div class=\"HubBlock--callout\">\r\n<div class=\"CalloutBlock--info\">\r\n<div class=\"HubBlock-content\">\r\n    \r\n<!-- theme:  -->\r\n\r\n### Microsoft No Longer Supports P3P\r\n> Support for P3P 1.0 has been removed in Windows 10 and will have minimal ongoing servicing for previous versions of Windows. [_Microsoft_](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/mt146424(v=vs.85)?redirectedfrom=MSDN)\r\n\r\n</div>\r\n</div>\r\n</div>\r\n\r\n## Hosting Your App\r\nBigCommerce stores are hosted on [Google Cloud Platform](https://cloud.google.com/) in the [us-central1](https://cloud.google.com/compute/docs/regions-zones/) region.\r\n\r\nTherefore, you can maximize performance of your app (in terms of latency to the public API) by hosting in the same region. There is no requirement to do so, and you may host wherever you like.\r\n\r\n## FAQ\r\n\r\n### How can I make API calls?   \r\nWe have built several [Hello World](https://developer.bigcommerce.com/tools-resources) apps to get you started quickly. You can use these apps as a starting point or an example for building a Single-click app. \r\n\r\nIf you'd like to make test API requests without the overhead of installing a draft app, you can generate [API Credentials](https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_getting-api-credentials) by creating an API Account in your store's control panel.\r\n\r\n### How can I sell my app?  \r\nThe first step to listing an app in the BigCommerce App Marketplace is to apply to the BigCommerce [partner program](https://www.bigcommerce.com/partners/). \r\n\r\nFor more details on including your app in the Marketplace, see [App Store Approval Requirements](https://developer.bigcommerce.com/api-docs/partner/app-store-approval-requirements).\r\n\r\n## Resources\r\n\r\n### Tools\r\n* [Online Crawler](https://www.jitbit.com/sslcheck/) (JitBit)\r\n### Sample Apps\r\n* [Ruby Hello World](https://github.com/bigcommerce/omniauth-bigcommerce) (BigCommerce GitHub)\r\n* [Python Hello World](https://github.com/bigcommerce/hello-world-app-python-flask) (BigCommerce GitHub)\r\n### Related Articles\r\n* [Big Design Developer Playground](https://developer.bigcommerce.com/big-design/)\r\n* [Authentication](https://developer.bigcommerce.com/api-docs/getting-started/authentication)\r\n* [Customer Login API](https://developer.bigcommerce.com/api-docs/customers/customer-login-api)\r\n* [App Store Approval Requirements](https://developer.bigcommerce.com/api-docs/partner/app-store-approval-requirements)\r\n* [Store Accounts](https://support.bigcommerce.com/s/article/Store-API-Accounts#creating) (Knowledge Base)\r\n* [Supported Browsers](https://support.bigcommerce.com/s/article/Themes-Supported-Browsers) (Knowledge Base)\r\n* [BigCommerce Partners](https://www.bigcommerce.com/partners/) (BigCommerce)\r\n* [How to Test App Authentication Locally with ngrok](https://medium.com/bigcommerce-developer-blog/how-to-test-app-authentication-locally-with-ngrok-149150bfe4cf) (BigCommerce Developer Blog)\r\n* [Building a BigCommerce App Using Laravel and React](https://medium.com/bigcommerce-developer-blog/building-a-bigcommerce-app-using-laravel-and-react-711ceceb5006) (BigCommerce Developer Blog)\r\n* [Big Design Tutorial](https://medium.com/bigcommerce-developer-blog/bigdesign-build-native-looking-uis-with-the-bigcommerce-design-system-fb06a01a24f2) (BigCommerce Developer Blog)\r\n### Additonal Resources\r\n* [Same Origin Policy](https://en.wikipedia.org/wiki/Same-origin_policy) (Wikipedia)\r\n* [Craft a P3P Policy to Make IE Behave](https://www.techrepublic.com/blog/software-engineer/craft-a-p3p-policy-to-make-ie-behave/) (Tech Republic)\r\n* [Quick Look at P3P](https://blogs.msdn.microsoft.com/ieinternals/2013/09/17/a-quick-look-at-p3p/) (Microsoft Blogs)\r\n* [Google Cloud](https://cloud.google.com/) (Google)\r\n"}],"children":[]}}},"siteData":{"metaTitle":"BigCommerce Dev Center - Theme Development & API Documentation","basePath":"/","title":"Dev Center","theme":{"background":"#4d34c6","primary":"#4b71fc","secondary":"#2553fb"},"googleAnalytics":"UA-93363200-2","gtm":"GTM-KL3MKSK","intercom":null,"segment":"BTmUWLubCbJjBopJwsDTxC0594E6Z5ex","whitelabel":true}};</script><script defer="" type="text/javascript" src="/_/assets/templates/vendors~client-containers-Login~client-containers-Page.58d3df14.js"></script><script defer="" type="text/javascript" src="/_/assets/templates/vendors~client-containers-Page.ef375bcd.js"></script><script defer="" type="text/javascript" src="/_/assets/templates/client-containers-Login~client-containers-Page.70fcdb42.js"></script><script defer="" type="text/javascript" src="/_/assets/templates/client-containers-Page.674feb58.js"></script><script defer="" type="text/javascript" src="/_/assets/templates/styles.b34d5813.js"></script><script defer="" type="text/javascript" src="/_/assets/templates/vendors~main.246fd5b0.js"></script><script defer="" type="text/javascript" src="/_/assets/main.f4e34ab0.js"></script></body></html>

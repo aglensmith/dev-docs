@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en-US"><head><title data-react-helmet="true">/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/image-helpers</title><meta data-react-helmet="true" name="robots" content="noindex"/><meta data-react-helmet="true" http-equiv="content-type" content="text/html; charset=utf-8"/><meta data-react-helmet="true" http-equiv="refresh" content="0; url=/stencil-docs/reference-docs/handlebars-helpers-reference"/><script async="" type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-TNGJT5N');</script><script async="" id="gtm-script" type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-KL3MKSK');</script><script defer="" async="" src="/_/assets/js/bugsnag.min.js"></script><script type="text/javascript">try {
+              var requestRunner = (function(){
+    
+  var requestRunnerWrapper = function () {
+      var elem = document.createElement("div");
+      elem.id="requestRunner";
+      elem.classList.add("requestRunner-close");
+      return elem;
+  }();
+  var requestRunnerTab =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTab";
+      elem.classList.add("requestRunner");
+      return elem;
+   }();
+  var requestRunnerTabHeader =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTabHeader";
+      elem.textContent = "Request Runner";
+      return elem;
+   }();
+  var requestRunnerTabClose =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerTabClose";
+      elem.innerHTML = "&times;";
+      return elem;
+   }();
+  var requestRunnerFrameWrapper =  function () {
+      var elem = document.createElement("div");
+      elem.id = "requestRunnerFrameWrapper";
+      return elem;
+   }();
+  var requestRunnerLoader =  function () {
+    var elem = document.createElement("div");
+    elem.classList.add("requestRunnerLoader");
+    elem.classList.add("ui");
+    elem.classList.add("active");
+    elem.classList.add("indeterminate");
+    elem.classList.add("text");
+    elem.textContent = "Loading"
+    elem.classList.add("loader");
+    return elem;
+  }();
+  var requestRunnerFrame =  function () {
+      var elem = document.createElement("iframe");
+      elem.id = "requestRunnerframe";
+      elem.classList.add("requestRunner-close");
+      elem.onload = function() {
+        setTimeout(function(){requestRunnerFrame.classList.add("requestRunnerShow");}, 500);
+      }
+      elem.src = "";
+      return elem;
+   }();
+  var requestRunnerSearch = function () {
+    var elem = document.createElement("input");
+    elem.placeholder = "Search...";
+    elem.id = "algolia-search-frame";
+    elem.onload = function () {
+      docsearch({
+          appId: 'QUTLQTIH9V',
+          apiKey: 'd380da466100e42097fe7c280d5cc5e8',
+          indexName: 'stoplight_API_Endpoints',
+          inputSelector: '#algolia-search-frame',
+          debug: true,
+          algoliaOptions: {
+            hitsPerPage: 10,
+           facetFilters: [
+             'hierarchy.lvl6:-Host'
+           ]
+          }
+      });
+    }
+    return elem;
+};
+
+  var requestRunnerOpen = false;
+  var lastRequestSrc = "";
+  var newRequestSrc = "";
+
+  var newFrameLoading = function() {
+      return newRequestSrc != lastRequestSrc;
+  };
+
+  var pageReady = (callback) => {
+    if (document.readyState != "loading") callback();
+    else document.addEventListener("DOMContentLoaded", callback);
+  };
+   
+  var addToggleEvent = function () {
+     if (window.top != window.self) {return;}
+    document.querySelectorAll('a[href*="#requestrunner"]').forEach(e => { e.onclick = function(){
+      requestRunnerFrame.classList.remove("requestRunnerShow");
+      lastRequestSrc = requestRunnerFrame.src;
+      newRequestSrc = e.href;
+
+      setTimeout(function(){requestRunnerFrame.src = newRequestSrc;}, 300);
+      
+      toggleRequestRunner();
+      return false;
+    }});
+  };
+
+  var toggleRequestRunner = function () { 
+    
+      if (!requestRunnerOpen && newFrameLoading()) {
+        requestRunnerOpen = true;
+        requestRunnerWrapper.classList.remove("requestRunner-close");
+        requestRunnerFrame.classList.remove("requestRunner-close");
+        requestRunnerWrapper.classList.add("requestRunner-expand");
+        requestRunnerFrame.classList.add("requestRunner-expand");
+        return;
+      }
+      if (requestRunnerOpen && !newFrameLoading()) {
+        requestRunnerOpen = false;
+        requestRunnerWrapper.classList.add("requestRunner-close");
+        requestRunnerFrame.classList.add("requestRunner-close");
+        requestRunnerWrapper.classList.remove("requestRunner-expand");
+        requestRunnerFrame.classList.remove("requestRunner-expand");
+        return;
+      }
+      if (!requestRunnerOpen && !newFrameLoading()) {
+        requestRunnerOpen = true;
+        requestRunnerFrame.classList.add("requestRunnerShow");
+        requestRunnerWrapper.classList.remove("requestRunner-close");
+        requestRunnerFrame.classList.remove("requestRunner-close");
+        requestRunnerWrapper.classList.add("requestRunner-expand");
+        requestRunnerFrame.classList.add("requestRunner-expand");
+        return;
+      }
+      if (requestRunnerOpen && newFrameLoading()) {
+        requestRunnerOpen = true;
+        return;
+      }
+  };
+
+  var insertRequester = function () {
+    if (window.top != window.self) {return;}
+      requestRunnerTab.append(requestRunnerTabHeader);
+      requestRunnerTab.append(requestRunnerTabClose);
+      requestRunnerFrameWrapper.append(requestRunnerTab);
+      requestRunnerFrameWrapper.append(requestRunnerFrame);
+      requestRunnerFrameWrapper.append(requestRunnerLoader);
+      requestRunnerWrapper.append(requestRunnerFrameWrapper);
+      document.body.append(requestRunnerWrapper);
+  };
+  
+  var init = function () {
+    hideStuffInIframe();
+    if (window.top != window.self) {return;}
+    requestRunnerTab.onclick = function () {
+      requestRunnerOpen = false;
+      lastRequestSrc = requestRunnerFrame.src;
+      setTimeout(function(){requestRunnerFrame.classList.remove("requestRunnerShow");}, 200);
+      requestRunnerWrapper.classList.add("requestRunner-close");
+      requestRunnerFrame.classList.add("requestRunner-close");
+      requestRunnerWrapper.classList.remove("requestRunner-expand");
+      requestRunnerFrame.classList.remove("requestRunner-expand");
+    };
+    insertRequester();
+    addToggleEvent();
+  }
+
+  var hideStuffInIframe = function () {
+      if (inIframe()) {
+        document.body.classList.add("requestRunnerHub");
+      }
+    };
+
+  var inIframe = function () {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+  
+  return {
+    init: init,
+    pageReady: pageReady,
+    addToggleEvent: addToggleEvent
+  }
+
+})();
+
+var DevCenter = (function(){
+  var head = document.getElementsByTagName('head')[0];
+  var body = document.body;
+
+  var addScript = function (url, toElement) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      toElement.appendChild(script);
+  };
+
+  var addCss = function (url) {
+      var link = document.createElement("link");
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      link.href = url;
+      head.appendChild(link);
+  };
+
+  var jotFormScript = function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "https://form.jotform.com/static/feedback2.js"
+      script.text = 'new JotformFeedback({formId: "80163258305149",buttonText: "Docs Feedback",base: "https://form.jotform.com/",background: "#4E75F8",fontColor: "#FFFFFF",buttonSide: "bottom",buttonAlign: "right",type: 1,width: 530,height: 500,isCardForm: false});'
+      return script;
+  };
+
+  var changelogWidgetScript = function () {
+      var script = document.createElement('script');
+      script.async;
+      script.defer;
+      script.src = "https://cdn.noticeable.io/v1/noticeable-widget.js"
+      return script
+  };
+
+  var injectChangelogWidget = function () {
+      var target = document.getElementsByClassName('HubHeader-section')[0];
+      var noticeableWidget= document.createElement('noticeable-widget');
+      noticeableWidget.setAttribute('class', 'HubHeaderItem NoticeableWidget');
+      noticeableWidget.id = 'custom-eye-catching-animation';
+      noticeableWidget.setAttribute('access-token', 'I8jRV1nwLLaUUZBQZSep');
+      noticeableWidget.setAttribute('project-id', 'Q8YuGWPOCMmZDwnKUywV');
+      noticeableWidget.setAttribute('trigger-eye-catching','false');
+      noticeableWidget.setAttribute('segments','Noticeable:Timeline');
+      noticeableWidget.setAttribute('whiteLabel','true');
+      target.appendChild(noticeableWidget);
+  };
+
+  var init = function () {
+      window.onload = function() {
+          document.body.appendChild(jotFormScript());
+          document.body.appendChild(changelogWidgetScript());
+          injectChangelogWidget();
+        	
+
+          window.requestRunner.init();
+          // each time the route/url changes
+        	if (typeof(__reactStaticRouterHistory) !== "undefined") {
+            __reactStaticRouterHistory.listen(function(){
+              window.requestRunner.pageReady(requestRunner.addToggleEvent);
+            });
+          }
+      };
+  };
+
+return {
+  init: init
+};
+
+})();
+
+window.noticeableSettings = {
+  iframe: {
+    selector: "#noticeable-iframe",
+    singlePageApp: true,
+    timelineUrl: "https://timeline.noticeable.io/Q8YuGWPOCMmZDwnKUywV?header=false"
+	}
+};
+
+DevCenter.init();
+            } catch (error) {
+              console.log('Error running custom javascript', error);
+            }</script><script type="text/javascript">
+            window.__SL = {
+              config: {"ENV":"production","NODE_ENV":"production","RELEASE_STAGE":"production","DEFAULT_LOCALE":"en","APP_NAME":"hub-builder","GTM_KEY":"GTM-TNGJT5N","BUGSNAG_CLIENT":"68b2d22c41911b0c37104e17e26b753c","SL_API_HOST":"https://next-api.stoplight.io","SL_PRISM_HOST":"https://prism.stoplight.io","redirects":[{"from":"/api","to":"/api-docs"},{"from":"/api/v2","to":"/legacy/v2-products/v2-v3"},{"from":"/support","to":"/"},{"from":"/api/v3","to":"/api-docs"},{"from":"/themes/blueprint","to":"/legacy/blueprint-themes"},{"from":"/api/v3/storefront.html","to":"/api-docs/cart-and-checkout/cart-and-checkout-overview"},{"from":"/themes","to":"/stencil-docs"},{"from":"/api/guides","to":"/api-docs"},{"from":"/bigcommerce-for-wordpress/changelog/plugin-changelog","to":"https://plugins.trac.wordpress.org/browser/bigcommerce/trunk/CHANGELOG.md?order=name"},{"from":"/api-docs/catalog/products/product-images","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-videos","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-custom-fields","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-bulk-pricing","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-variant-options","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-complex-rules","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-metafields","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/product-reviews","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/products/brands","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/categories/categories-overview","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/catalog/categories/category-tree","to":"/api-docs/catalog/products-overview"},{"from":"/api-docs/price-lists/price-list-overview","to":"/api-docs/catalog/price-list-overview"},{"from":"/api-docs/shipping/shipping-overview","to":"/api-docs/store-management/shipping/shipping-overview"},{"from":"/api-docs/shipping/shipper-hq","to":"/api-docs/store-management/shipping/shipper-hq"},{"from":"/api-docs/scripts/scripts-overview","to":"/api-docs/storefront/scripts-overview"},{"from":"/api-reference/price-lists/pricelists-api","to":"/api-reference/price-lists/pricelists-api"},{"from":"/api-reference/store/store-information-api","to":"/api-reference/store-management/store-information-api"},{"from":"/api-reference/store/currency-api","to":"/api-reference/store-management/currency-api"},{"from":"/api-reference/store/geography-api","to":"/api-reference/store-management/geography-api"},{"from":"/api-reference/store/tax-classes-api","to":"/api-reference/store-management/tax-classes-api"},{"from":"/api-reference/shipping/shipping-api","to":"/api-reference/store-management/shipping-api"},{"from":"/api-reference/content/store-content-api","to":"/api-reference/marketing/store-content-api"},{"from":"/api-reference/content/content-scripts-api","to":"/api-reference/storefront/content-scripts-api"},{"from":"/api-reference/themes/themes-api","to":"/api-reference/storefront/themes-api"},{"from":"/api-docs/getting-started/basics/about-our-api","to":"/api-docs/getting-started/about-our-api"},{"from":"/api-docs/getting-started/basics/making-requests","to":"/api-docs/getting-started/making-requests"},{"from":"/api-docs/getting-started/basics/authentication","to":"/api-docs/getting-started/authentication"},{"from":"/api-docs/getting-started/basics/api-environment","to":"/api-docs/getting-started/about-our-api"},{"from":"/api-docs/getting-started/basics/filtering","to":"/api-docs/getting-started/filtering"},{"from":"/api-docs/getting-started/basics/best-practices","to":"/api-docs/getting-started/best-practices"},{"from":"/api-docs/getting-started/basics/api-status-codes","to":"/api-docs/getting-started/api-status-codes"},{"from":"/api-docs/orders/orders-api-guide","to":"/api-docs/orders/orders-api-overview"},{"from":"/stencil-docs/stencil-theme-editor","to":"/stencil-docs/store-design"},{"from":"/stencil-docs/stencil-theme-editor/stencil-theme-editor-overview","to":"/stencil-docs/store-design/store-design-overview"},{"from":"/stencil-docs/stencil-theme-editor/configuring-stencil-theme-editor","to":"/stencil-docs/store-design/configuring-store-design"},{"from":"/stencil-docs/stencil-theme-editor/config-json-metadata","to":"/stencil-docs/store-design/config-json-metadata"},{"from":"/stencil-docs/stencil-theme-editor/preparing-thumbnail-images","to":"/stencil-docs/store-design/preparing-thumbnail-images"},{"from":"/stencil-docs/stencil-theme-editor/theme-editor-troubleshooting","to":"/stencil-docs/store-design/store-design-troubleshooting"},{"from":"/stencil-docs/stencil-theme-editor/schema-json-metadata","to":"/stencil-docs/store-design/schema-json-metadata"},{"from":"/stencil-docs/getting-started/launching-stencil/authorizing-and-initializing","to":"/stencil-docs/getting-started/running-stencil-locally/authorizing-and-initializing"},{"from":"/stencil-docs/internationalization-and-localization/basis-for-internationalization","to":"/stencil-docs/internationalization-and-localization/defining-translation-keys"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/new-subpage","to":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/standard-string-helpers"},{"from":"/api-reference/content/store-content-api/redirects/getaredirecturl","to":"/api-reference/marketing/store-content-api/redirects/getalistofredirects"},{"from":"/stencil-docs/prepare-and-upload-a-theme/adding-recaptcha-v2","to":"/stencil-docs/prepare-and-upload-a-theme/bundling-and-uploading"},{"from":"/stencil-docs/custom-javascript-implementations/basic-non-npm-tutorial","to":"/stencil-docs/development-quickstart/customizing-javascript"},{"from":"/stencil-docs/getting-started/transitionining-to-stencil","to":"/stencil-docs/getting-started/transitioning-to-stencil"},{"from":"/stencil-docs/getting-started/installing-stencil","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/authentication-and-tokens","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally/troubleshooting-your-setup","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/getting-started/running-stencil-locally/stencil-cli-options-and-commands","to":"/markdown/stencil-docs/installing-stencil-cli/stencil-cli-options-and-commands.md"},{"from":"/stencil-docs/getting-started/running-stencil-locally/cornerstone-file-structure","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-the-cornerstone-theme","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-a-marketplace-theme","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/advanced-installation-options/theme-updates-and-version-control","to":"/\"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/development-quickstart/customizing-a-theme","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/config-json-resource-interactions","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/development-quickstart/customizing-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/rendering-html-with-ajax","to":"/stencil-docs/javascript-and-event-hooks/rendering-html-with-ajax"},{"from":"/stencil-docs/development-quickstart/testing-and-debugging-your-theme","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/development-quickstart/manage-theme-variations","to":"/stencil-docs/deploying-a-theme/naming-your-theme"},{"from":"/stencil-docs/store-design/store-design-overview","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/configuring-store-design","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/schema-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-ui-options"},{"from":"/stencil-docs/store-design/config-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/store-design/preparing-thumbnail-images","to":"/stencil-docs/deploying-a-theme/preparing-thumbnail-images"},{"from":"/stencil-docs/front-matter/front-matter-overview","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/front-matter/front-matter-attributes-reference","to":"/stencil-docs/reference-docs/front-matter-reference"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/layout-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/pages-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/google-analytics-enhanced-ecommerce","to":"/stencil-docs/developing-further/google-analytics-enhanced-ecommerce"},{"from":"/stencil-docs/template-files/templates-directory/google-amp","to":"/stencil-docs/developing-further/google-amp"},{"from":"/stencil-docs/template-files/templates-directory/using-disqus-with-stencil","to":"/stencil-docs/storefront-customization/using-disqus"},{"from":"/stencil-docs/template-files/custom-templates/about-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/authoring-testing-uploading-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/assigining-templates-to-pages","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/customizing-invoices","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/custom-templates/customizing-printable-packing-slips","to":"/stencil-docs/developing-further/customizing-printable-packing-slips"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/stored-credit-card-management","to":"/stencil-docs/developing-further/stored-credit-card-management"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/paypal-smart-buttons","to":"/stencil-docs/customizing-checkout/paypal-smart-buttons"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/optimized-one-page-checkout","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/currency-conversion","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/multi-language-checkout","to":"/stencil-docs/localization/multi-language-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-confirmation-injection","to":"/stencil-docs/customizing-checkout/checkout-confirmation-injection"},{"from":"/stencil-docs/css-and-design-assets/assets-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/layouts-and-utilities-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/getting-started-in-vanilla-js","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/implement-a-custom-checkout","to":"/stencil-docs/customizing-checkout/checkout-sdk-example"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/data-tags-event-hooks-reference","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/event-hook-overview-and-examples","to":"/stencil-docs/javascript-and-event-hooks/event-hooks"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/remote-api-example","to":"/stencil-docs/javascript-and-event-hooks/remote-api-tutorial"},{"from":"/stencil-docs/adding-event-hooks-to-your-theme/stencil-utils-api-reference","to":"/stencil-docs/reference-docs/stencil-utils-api-reference"},{"from":"/stencil-docs/conditional-logic-examples","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/calling-theme-wide-variables","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/cart-price-relationships","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/catalog-price-object","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/conditional-logic-examples/dynamic-content-rendering","to":"/stencil-docs/javascript-and-event-hooks/dynamic-content-rendering"},{"from":"/stencil-docs/css-and-design-assets","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/assets-directory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/custom-sass-functions","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/page-composition-and-styling","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/stencil-design-patterns","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/using-and-updating-icons","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/css-and-design-assets/using-custom-fonts","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/custom-javascript-implementations","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/adding-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/advanced-npm-tutorial","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/basic-npm-tutorial","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/custom-javascript-implementations/new-subpage","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart","to":"/stencil-docs/getting-started"},{"from":"/stencil-docs/development-quickstart/config-json-resource-interactions","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/development-quickstart/customizing-a-theme","to":"/stencil-docs/getting-started/about-stencil"},{"from":"/stencil-docs/development-quickstart/customizing-javascript","to":"/stencil-docs/javascript-and-event-hooks/customizing-javascript"},{"from":"/stencil-docs/development-quickstart/manage-theme-variations","to":"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/development-quickstart/rendering-html-with-ajax","to":"/stencil-docs/javascript-and-event-hooks/rendering-html-with-ajax"},{"from":"/stencil-docs/development-quickstart/testing-and-debugging-your-theme","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/front-matter","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/front-matter/front-matter-attributes-reference","to":"/stencil-docs/reference-docs/front-matter-reference"},{"from":"/stencil-docs/front-matter/front-matter-overview","to":"/stencil-docs/storefront-customization/using-front-matter"},{"from":"/stencil-docs/getting-started/advanced-installation-options","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/configuring-webpack-or-custom-build","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-a-marketplace-theme","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/downloading-the-cornerstone-theme","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/navigating-your-setup-scenario","to":"/stencil-docs"},{"from":"/stencil-docs/getting-started/advanced-installation-options/theme-updates-and-version-control","to":"/stencil-docs/developing-further/theme-updates-and-version-control"},{"from":"/stencil-docs/getting-started/authentication-and-tokens","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/installing-stencil","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally","to":"/stencil-docs/installing-stencil-cli/installing-stencil"},{"from":"/stencil-docs/getting-started/running-stencil-locally/authorizing-and-initializing","to":"/stencil-docs/installing-stencil-cli"},{"from":"/stencil-docs/getting-started/running-stencil-locally/cornerstone-file-structure","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/getting-started/running-stencil-locally/stencil-cli-options-and-commands","to":"/stencil-docs/installing-stencil-cli/stencil-cli-options-and-commands"},{"from":"/stencil-docs/getting-started/running-stencil-locally/troubleshooting-your-setup","to":"/stencil-docs/installing-stencil-cli/troubleshooting-your-setup"},{"from":"/stencil-docs/getting-started/transitionining-to-stencil","to":"/stencil-docs/getting-started/transitioning-to-stencil"},{"from":"/stencil-docs/handlebars-syntax-and-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers/custom-array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/array-helpers/standard-array-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/collection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/collection-helpers/standard-collection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/comparison-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/comparison-helpers/standard-comparison-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/date-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/date-helpers/standard-date-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/handlebars-helpers-reference","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/html-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/html-helpers/standard-html-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/image-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/image-helpers/custom-image-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/inflection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/inflection-helpers/standard-inflection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/injection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/injection-helpers/injection-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/markdown-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/markdown-helpers/standard-markdown-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/math-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/math-helpers/standard-math-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/misc-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/misc-helpers/standard-miscellaneous-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage/conditional-control-flow-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/new-subpage/loop-control-flow-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/number-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/number-helpers/standard-number-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/object-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/object-helpers/standard-object-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/operator-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/operator-helpers/standard-operator-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/custom-string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/string-helpers/standard-string-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/url-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-helpers-reference/url-helpers/standard-url-helpers","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/handlebars-syntax-and-helpers/handlebars-overview","to":"/stencil-docs/reference-docs/handlebars-helpers-reference"},{"from":"/stencil-docs/internationalization-and-localization","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/defining-translation-keys","to":"/stencil-docs/localization/translation-keys"},{"from":"/stencil-docs/internationalization-and-localization/features-supported","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/implementation-example","to":"/stencil-docs/localization"},{"from":"/stencil-docs/internationalization-and-localization/invoking-translation-keys","to":"/stencil-docs/localization/translation-keys"},{"from":"/stencil-docs/internationalization-and-localization/localizing-stores","to":"/stencil-docs/localization"},{"from":"/stencil-docs/prepare-and-upload-a-theme","to":"/stencil-docs/deploying-a-theme"},{"from":"/stencil-docs/prepare-and-upload-a-theme/bundling-and-uploading","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/prepare-and-upload-a-theme/checking-a-themes-size","to":"/stencil-docs/deploying-a-theme/checking-a-themes-size"},{"from":"/stencil-docs/prepare-and-upload-a-theme/shrinking-your-theme","to":"/stencil-docs/deploying-a-theme/checking-a-themes-size"},{"from":"/stencil-docs/prepare-and-upload-a-theme/staging-a-theme","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/prepare-and-upload-a-theme/troubleshooting-theme-uploads","to":"/stencil-docs/deploying-a-theme/bundling-and-pushing"},{"from":"/stencil-docs/stencil-object-model-reference","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/catalog-price","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/common-onjects-overview","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/common-product-card-model","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/price","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/price-range","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/common-objects/stencil-image","to":"/stencil-docs/reference-docs/common-objects"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/banner","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/breadcrumbs","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/carousel","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/categories","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/currency-selector","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/faceted-search","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/featured-products","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/footer","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/global-objects-and-properties-overview","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/html-head","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/is-ajax","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/login","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/new-products","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/page-content","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/page-type-property","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/pages","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/pagination","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/search","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/settings","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/sitemap","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/social-links","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/template-property","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/global-objects/top-sellers","to":"/stencil-docs/reference-docs/global-objects-and-properties"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/blog-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/brand-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/cart-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/category-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/customer-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/forms-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/other-objects-and-properties-overview","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/stencil-object-model-reference/stencil-objects/other-objects-and-properties/product-objects","to":"/stencil-docs/reference-docs/other-objects-and-properties-overview"},{"from":"/stencil-docs/store-design","to":"/stencil-docs/configure-store-design-ui"},{"from":"/stencil-docs/store-design/config-json-metadata","to":"/stencil-docs/configure-store-design-ui/defining-global-styles"},{"from":"/stencil-docs/store-design/configuring-store-design","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/store-design/preparing-thumbnail-images","to":"/stencil-docs/deploying-a-theme/preparing-thumbnail-images"},{"from":"/stencil-docs/store-design/schema-json-metadata","to":"/api-reference/theme-objects/models/configjson"},{"from":"/stencil-docs/store-design/store-design-overview","to":"/stencil-docs/configure-store-design-ui/store-design-overview"},{"from":"/stencil-docs/template-files","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/about-custom-templates","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/assigining-templates-to-pages","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/custom-templates/customizing-invoices","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/custom-templates/customizing-printable-packing-slips","to":"/stencil-docs/developing-further/customizing-invoices"},{"from":"/stencil-docs/template-files/customize-stencil-checkout","to":"/stencil-docs/customizing-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-confirmation-injection","to":"/stencil-docs/customizing-checkout/checkout-confirmation-injection"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/getting-started-in-vanilla-js","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/checkout-js-sdk/implement-a-custom-checkout","to":"/stencil-docs/customizing-checkout/checkout-sdk-quickstart"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/currency-conversion","to":"/stencil-docs/localization"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/multi-language-checkout","to":"/stencil-docs/localization/multi-language-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/optimized-one-page-checkout","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/paypal-smart-buttons","to":"/stencil-docs/customizing-checkout/paypal-smart-buttons"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/restyling-the-apple-pay-button","to":"/stencil-docs/customizing-checkout/optimized-one-page-checkout"},{"from":"/stencil-docs/template-files/customize-stencil-checkout/stored-credit-card-management","to":"/stencil-docs/developing-further/stored-credit-card-management"},{"from":"/stencil-docs/template-files/templates-directory","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/templates-directory/components-subdirectory","to":"/stencil-docs/storefront-customization/custom-templates"},{"from":"/stencil-docs/template-files/templates-directory/google-amp","to":"/stencil-docs/developing-further/google-amp"},{"from":"/stencil-docs/template-files/templates-directory/google-analytics-enhanced-ecommerce","to":"/stencil-docs/developing-further/google-analytics-enhanced-ecommerce"},{"from":"/stencil-docs/template-files/templates-directory/layout-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/pages-subdirectory","to":"/stencil-docs/storefront-customization/theme-assets"},{"from":"/stencil-docs/template-files/templates-directory/using-disqus-with-stencil","to":"/stencil-docs/storefront-customization/using-disqus"},{"from":"/api-reference/theme-objects/models/configjson","to":"/stencil-docs/reference-docs/theme-objects/models/configjson"},{"from":"/voyager","to":"/api-docs/storefront/graphql/explorer"},{"from":"/api-docs/storefront/graphql/explorer","to":"/graphql-explorer"},{"from":"/api-docs/storefront/graphql/playground","to":"/graphql-playground"},{"from":"/graphql","to":"/graphql-playground"},{"from":"/api#api-status-codes","to":"/api-docs/getting-started/api-status-codes"},{"from":"/api-docs/catalog/products/products-overview","to":"/api-docs/catalog/products-overview"}],"variables":"{\n  \"docs_path\": \"bigcommerce/dev-docs/master/docs\",\n  \"reference_path\": \"bigcommerce/dev-docs/master/reference\",\n  \"storefront_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJlYXQiOjE3NjcxMzkyMDAsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxLCJjb3JzIjpbImh0dHBzOi8vZGV2ZWxvcGVyLmJpZ2NvbW1lcmNlLmNvbSJdLCJjaWQiOjEsImlhdCI6MTU3NjI1MzgyNCwic3ViIjoiM3dtZThrcWtrNjQwNzZueWljMGkzamk0NG5wajQ2byIsInNpZCI6OTk5MzMxNzg0LCJpc3MiOiJCQyJ9.Rqt6hNI2W-XSOzHl4pqtfhAOygwka6atCIaIZ_WAa9v3dOctnBlZpBV5wzd3ICCy4sTCOZ9mJwcFH5_CHmJpNQ\",\n  \"playground_tab\": \"all\",\n  \"experiments\": \"off\",\n  \"store_hash\": \"store_hash\"\n}"}
+            };
+
+            false
+            </script><script async="" id="google-analytics-script" type="text/javascript">
+      var script = document.createElement('script');
+      script.src = 'https://www.google-analytics.com/analytics.js';
+      document.head.appendChild(script);
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    </script><script async="" id="segment-script" type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("BTmUWLubCbJjBopJwsDTxC0594E6Z5ex");
+  analytics.page();
+  }}();
+  </script><link rel="stylesheet" href="/_/assets/css/semantic.min.css"/><link data-react-helmet="true" rel="canonical" href="/stencil-docs/reference-docs/handlebars-helpers-reference"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="index, follow"/><meta name="application-name" content="Dev Center" id="application-name"/><meta property="og:site_name" content="Dev Center" id="og:site_name"/><meta property="og:title" content="BigCommerce Dev Center - Theme Development &amp; API Documentation" id="og:title" data-react-helmet="true"/><meta property="og:type" content="website" id="og:type"/><meta name="description" content="Build apps and themes for thousands of successful merchants on our growing ecommerce platform." id="description" data-react-helmet="true"/><meta property="og:description" content="Build apps and themes for thousands of successful merchants on our growing ecommerce platform." id="og:description" data-react-helmet="true"/><link rel="shortcut icon" href="https://www.bigcommerce.com/assets/images/favicons/favicon-96x96.png"/><link rel="preload" href="/_/assets/fonts/icons.woff2?v=5.0.6" as="font" type="font/woff2" crossorigin="anonymous"/><link href="/_/assets/css/semantic.min.css" rel="preload" as="style"/><link href="/_/assets/css/custom-theme.54551.css" rel="preload" as="style"/><link href="/_/assets/css/custom-file.54551.css" rel="preload" as="style"/></head><body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KL3MKSK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TNGJT5N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><link rel="stylesheet" href="/_/assets/css/custom-theme.54551.css"/><link rel="stylesheet" href="/_/assets/css/custom-file.54551.css"/><style type="text/css">
+            @font-face {
+              font-family: 'Icons';
+              src: url('/_/assets/fonts/icons.woff2?v=5.0.6') format('woff2'), url('/_/assets/fonts/icons.woff?v=5.0.6') format('woff');
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-decoration: inherit;
+              text-transform: none;
+            }
+            </style><div id="root"></div></body></html>
